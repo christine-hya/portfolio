@@ -16,9 +16,7 @@ class Categories {
                         toTitleCase(category) + 
                         "</a><br>" 
                     )
-
                 })
-
             }
         })
     }
@@ -26,7 +24,7 @@ class Categories {
     getSingleCategory(slug) {
         $.ajax({
             type: 'GET',
-            url: this.apiUrl + "products/category/",
+            url: this.apiUrl + "products/category/" + slug,
             success: function (data) {
                 console.log(data)
                 $(data).each(function(index, product){

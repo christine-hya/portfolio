@@ -14,17 +14,24 @@ $(function () {
 var categoriesSetup = function () {
     let categories = new Categories()
     categories.getAllCategories()
-    console.log(decodeURIComponent(urlParam("category")))
-    categories.getSingleCategory('electronics')
+    if(urlParam('category')){
+    categories.getSingleCategory(decodeURIComponent(urlParam('category')))
+    }
 }
 
 var productsSetup = function () {
-    console.log('products here')
+    let products = new Products()
+    if($('.products.new').length){
+        products.getNewProducts(8) 
+    }
+    if (urlParam('productid')){
+    products.getSingleProduct(urlParam('productid'))
+    }
 }
 
 function loadScript (url, callback){
      var head = document.head
-     var script = document.createElement("script")
+     var script = document.createElement('script')
      script.src = url
      script.onreadystatechange = callback
      script.onload = callback
