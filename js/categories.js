@@ -1,19 +1,19 @@
 class Categories {
     constructor() {
-        this.apiUrl = "https://fakestoreapi.com/"
+        this.apiUrl = "http://localhost/api-for-shop/api/v1/pages"
     }
 
     getAllCategories() {
         $.ajax({
             type: 'GET',
-            url: this.apiUrl + "products/categories",
+            url: this.apiUrl + "/categories",
             success: function (data) {
-                $(data).each(function(index, category){
+                $(data['response']).each(function(index, category){
                     $('.categories').append(
                         '<a class="dropwdown-item" href="/category.html?category='
-                        + encodeURIComponent(category) 
+                        + encodeURIComponent(category.categories) 
                         + '">' + 
-                        toTitleCase(category) + 
+                        category.categories + 
                         "</a><br>" 
                     )
                 })
@@ -21,23 +21,23 @@ class Categories {
         })
     }
 
-    getSingleCategory(slug) {
-        $.ajax({
-            type: 'GET',
-            url: this.apiUrl + "products/category/" + slug,
-            success: function (data) {
-                console.log(data)
-                $(data).each(function(index, product){
-                    $(".products").append(
-                        '<div class="col-md-3"><a href="/product.html?productid=' 
-                        + product.id + 
-                        '"><img src="'+ product.image +
-                        '" class="img-fluid">' 
-                        + product.title + 
-                        "</a></div>"
-                    )
-                })
-            }
-        })
-    }
+    // getSingleCategory(slug) {
+    //     $.ajax({
+    //         type: 'GET',
+    //         url: this.apiUrl + "category/" + slug,
+    //         success: function (data) {
+    //             console.log(data)
+    //             $(data).each(function(index, product){
+    //                 $(".products").append(
+    //                     '<div class="col-md-3"><a href="/product.html?productid=' 
+    //                     + product.id + 
+    //                     '"><img src="'+ product.image +
+    //                     '" class="img-fluid">' 
+    //                     + product.title + 
+    //                     "</a></div>"
+    //                 )
+    //             })
+    //         }
+    //     })
+    // }
 }
