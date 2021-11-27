@@ -11,26 +11,34 @@ class Products {
                 console.log(data)
                 $(data['response']).each(function(index, product){
                     $(".products").append(
-                        '<div class="col-md-3"><p>' + product.title + ' </p></div>'
+                        '<div class="col-md-3"><img src="'+ product.image +
+                        '" class="img-fluid"><a href="product.html?product=' 
+                        + product.slug + 
+                        '">' + product.title + '</a></div>'
                     )
-                    console.log(product.title)
+                    console.log(product.slug)
                 })
             },
         })
     }
 
-    // getSingleProduct(id) {
-    //     $.ajax({
-    //         type: 'GET',
-    //         url: this.apiUrl + "products/" + id,
-    //         success: function (data) {
-    //         console.log(data)
-    //         $('.product_image').html('<img src="' + data.image + '" class="img-fluid">')
+    getSingleProduct(slug) {
+        $.ajax({
+            type: 'GET',
+            url: this.apiUrl + "single?product=" + slug,
+            success: function (data) {
+            console.log(data)
+            console.log(data['response'])
+            $(data['response']).each(function(index, product){
+            $('.product_image').html('<img src="' + product.image + '" class="img-fluid">')
 
-    //         $('.product_title').html(data.title)
-    //         $('.product_price').html('$' + data.price.toFixed(2))
-    //         $('.product_description').html('<p>' + data.description + '</p>')
-    //         },
-    //     })
-    // }
+            $('.product_title').html(product.title)
+            $('.product_price').html('R' + product.price)
+            $('.product_description').html('<p>' + product.description + '</p>')
+
+            })
+     
+            },
+        })
+    }
 }

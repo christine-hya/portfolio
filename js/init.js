@@ -28,8 +28,8 @@ var productsSetup = function () {
     if($('.products.new').length){
         products.getNewProducts(8) 
     }
-    if (urlParam('productid')){
-    products.getSingleProduct(urlParam('productid'))
+    if (urlParam('product')){
+    products.getSingleProduct(urlParam('product'))
     }
 }
 
