@@ -3,6 +3,7 @@ class Categories {
         this.apiUrl = "http://localhost/api-for-shop/api/v1/pages"
     }
 
+    //display in nav
     getAllCategories() {
         $.ajax({
             type: 'GET',
@@ -13,7 +14,7 @@ class Categories {
                         '<a class="dropwdown-item" href="/category.html?category='
                         + encodeURIComponent(category.categories) 
                         + '">' + 
-                        category.categories + 
+                        toTitleCase(category.categories) + 
                         "</a><br>" 
                     )
                 })
@@ -21,23 +22,22 @@ class Categories {
         })
     }
 
-    // getSingleCategory(slug) {
-    //     $.ajax({
-    //         type: 'GET',
-    //         url: this.apiUrl + "category/" + slug,
-    //         success: function (data) {
-    //             console.log(data)
-    //             $(data).each(function(index, product){
-    //                 $(".products").append(
-    //                     '<div class="col-md-3"><a href="/product.html?productid=' 
-    //                     + product.id + 
-    //                     '"><img src="'+ product.image +
-    //                     '" class="img-fluid">' 
-    //                     + product.title + 
-    //                     "</a></div>"
-    //                 )
-    //             })
-    //         }
-    //     })
-    // }
+    getSingleCategory(slug) {
+        $.ajax({
+            type: 'GET',
+            url: this.apiUrl + '/' + slug,
+            success: function (data) {
+            
+            console.log(data['response'])
+            $(data['response']).each(function(index, product){
+                $(".products-category").append(
+                    '<div class="col-md-3"><img src="'+ product.image +
+                    '" class="img-fluid"><a href="product.html?product=' 
+                    + product.slug + 
+                    '">' + product.title + '</a></div>')
+            console.log(product.title)
+            })    
+            },
+        })
+    }
 }

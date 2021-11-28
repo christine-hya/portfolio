@@ -17,9 +17,9 @@ $(function () {
 var categoriesSetup = function () {
     let categories = new Categories()
     categories.getAllCategories()
-    // if(urlParam('category')){
-    // categories.getSingleCategory(decodeURIComponent(urlParam('category')))
-    // }
+    if(urlParam('category')){
+    categories.getSingleCategory(decodeURIComponent(urlParam('category')))
+    }
 }
 
 //get products from api
@@ -43,12 +43,12 @@ function loadScript (url, callback){
      head.appendChild(script)
 }
 
-// //title case to reuse
-// function toTitleCase(str){
-//     return str.replace(/(?:^|\s)\w/g, function(match){
-//         return match.toUpperCase()
-//     })
-// }
+//title case to reuse
+function toTitleCase(str){
+    return str.replace(/(?:^|\s)\w/g, function(match){
+        return match.toUpperCase()
+    })
+}
 
 //creating the url
 function urlParam(name){
