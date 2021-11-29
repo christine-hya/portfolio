@@ -11,12 +11,11 @@ class Products {
                 console.log(data)
                 $(data['response']).each(function(index, product){
                     $(".products").append(
-                        '<div class="col-md-3"><img src="'+ product.image +
-                        '" class="img-fluid"><a href="product.html?product=' 
+                        '<div class="col-md-3"><div class="product"><div class="image"><img src="'+ product.image +
+                        '" class="img-fluid"></div><div class="info"><a href="product.html?product=' 
                         + product.slug + 
-                        '">' + product.title + '</a></div>'
+                        '"><div class="title">' + product.title + '<br>R' + product.price + '</div></div></a></div></div>'
                     )
-                    console.log(product.slug)
                 })
             },
         })
@@ -27,15 +26,18 @@ class Products {
             type: 'GET',
             url: this.apiUrl + "single?product=" + slug,
             success: function (data) {
-            console.log(data)
-            console.log(data['response'])
+          
             $(data['response']).each(function(index, product){
             $('.product_image').html('<img src="' + product.image + '" class="img-fluid">')
 
             $('.product_title').html(product.title)
             $('.product_price').html('R' + product.price)
             $('.product_description').html('<p>' + product.description + '</p>')
-
+            $('.breadcrumb').html(
+                '<a class="text-dark" href="index.html">Home</a><span class="sep">></span><a class="text-dark" href="/category.html?category='
+                + product.categories
+                + '">' + toTitleCase(product.categories) + '</a><span class="sep">></span>'  + product.title             
+            )
             })
      
             },

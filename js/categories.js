@@ -11,11 +11,11 @@ class Categories {
             success: function (data) {
                 $(data['response']).each(function(index, category){
                     $('.categories').append(
-                        '<a class="dropwdown-item" href="/category.html?category='
+                        '<li class="text-center"><a class="dropwdown-item" href="/category.html?category='
                         + encodeURIComponent(category.categories) 
                         + '">' + 
                         toTitleCase(category.categories) + 
-                        "</a><br>" 
+                        "</a></li>" 
                     )
                 })
             }
@@ -31,11 +31,12 @@ class Categories {
             console.log(data['response'])
             $(data['response']).each(function(index, product){
                 $(".products-category").append(
-                    '<div class="col-md-3"><img src="'+ product.image +
-                    '" class="img-fluid"><a href="product.html?product=' 
+                    '<div class="col-md-3"><div class="product"><div class="image"><img src="'+ product.image +
+                    '" class="img-fluid"></div><div class="info"><a href="product.html?product=' 
                     + product.slug + 
-                    '">' + product.title + '</a></div>')
-            console.log(product.title)
+                    '"><div class="title">' + product.title + '<br>R' + product.price + '</div></div></a></div></div>'
+                )
+            
             })    
             },
         })
