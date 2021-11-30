@@ -1,5 +1,8 @@
 //load content
 $(function () {
+    if(localStorage.getItem('user') == null && $('.auth').length){
+        window.location.href="/login.html"
+    }
     loadScript('js/categories.js', categoriesSetup)
     loadScript('js/products.js', productsSetup)
     loadScript('js/user.js', userInfo)
@@ -37,6 +40,7 @@ var productsSetup = function () {
     }
 }
 
+//log in
 var userInfo = function() {
     let user = new User();
     $('form.login').submit(function(e){
@@ -45,6 +49,11 @@ var userInfo = function() {
         var password = $('#password').val()
         user.doLogin(username, password)
     })
+
+    if($('.userAccount').length){
+        var userAccount = JSON.parse(localStorage.user)
+        user.getAccountInfo(userAccount)
+    } 
 }
 
 //function to load js scripts

@@ -10,20 +10,58 @@
     <link href="sass/css/style.css" rel="stylesheet" />
     <title>Shop Frontend</title>
 </head>
-<body>
 
-<div id="nav-placeholder"></div>
+<body class="userAccount">
 
-<div class="container-fluid">
-    <div class="breadcrumb"><a class="text-dark" href="index.html">Home</a><span class="sep">></span>Your Account</div>
-    <h1>Your account</h1>
-    <div class="row">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
-                  
-                  
-            
+    <div id="nav-placeholder"></div>
+
+    <div class="container-fluid">
+        <div class="breadcrumb"><a class="text-dark" href="index.html">Home</a><span class="sep">></span>Your Account
+        </div>
+        <h1>Your account</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+
+                        <form method="post" class="updateAccount">
+                            <input type="text" id="username" name="username" class="form-control" readonly>
+                            <label>User name</label>
+                            <h3>Personal Information</h3>
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <input type="text" name="fname" id="fname" class="form-control">
+                                    <label for="fname">Name</label>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="lname" id="lname" class="form-control">
+                                    <label for="lname">Surname</label>
+                                </div>
+
+                            </div>
+                            <input type="text" name="phone" id="phone" class="form-control">
+                            <label for="phone">Phone</label>
+                            <input type="text" name="email" id="email" class="form-control">
+                            <label for="email">Email</label>
+
+                            <h3>Address</h3>
+                            <label for="address">Address</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" name="city" id="city" class="form-control">
+                                    <label for="city">City</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="zip" id="zip" class="form-control">
+                                    <label for="zip">Zip code</label>
+                                </div>
+                            </div>
+                            <br>
+                            <button class="btn btn-success">Update account</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,10 +71,10 @@
         </div>
     </div>
 
-</div>
-<br>
-<br>
-<div id="footer-placeholder"></div>
+    </div>
+    <br>
+    <br>
+    <div id="footer-placeholder"></div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
