@@ -34,7 +34,7 @@ class Categories {
                     '<div class="col-md-3"><div class="product"><div class="image"><img src="'+ product.image +
                     '" class="img-fluid"></div><div class="info"><a href="product.html?product=' 
                     + product.slug + 
-                    '"><div class="title">' + product.title + '<br>R' + product.price + '</div></div></a></div></div>'
+                    '"><div class="title">' + product.title + '<br>R' + Math.round(product.price) + '</div></div></a></div></div>'
                 )
             
             })    

@@ -1,3 +1,5 @@
+$error: red;
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css");
 
 body {
@@ -26,6 +28,33 @@ a {
 
 .text-end a {
     float: right;
+}
+
+
+.error-message-all {
+	font-size: 0.85rem;
+	color: $error;
+	text-align: center;
+	margin: 1rem 0;
+	display: none;
+}
+
+.error-message {
+	font-size: 0.85rem;
+	color: $error;
+}
+
+.error-message-signup-all {
+	font-size: 0.85rem;
+	color: $error;
+	text-align: center;
+	margin: 1rem 0;
+	display: none;
+}
+
+.error-message-signup {
+	font-size: 0.85rem;
+	color: $error;
 }
 
 .breadcrumb {
