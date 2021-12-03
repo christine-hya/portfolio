@@ -1,14 +1,16 @@
 class Signup {
-    constructor(form, fields) {
-        this.form = form
+    constructor(signupForm, fields, pwdRepeat, password) {
+        this.signupForm = signupForm
         this.fields = fields
+        this.pwdRepeat = pwdRepeat
+        this.password = password
         this.addUser()
     }
 
     addUser() {
         let self = this;
 
-        this.form.addEventListener("submit", (e) => {
+        this.signupForm.addEventListener("submit", (e) => {
             e.preventDefault();
             var error = 0;
             self.fields.forEach((field) => {
@@ -18,7 +20,7 @@ class Signup {
                 }
             });
             if (error == 0) {
-                let data = {
+                 const data = {
                     username: document.querySelector('#username').value,
                     fname: document.querySelector('#fname').value,
                     lname: document.querySelector('#lname').value,
@@ -35,15 +37,20 @@ class Signup {
                 })
                     .then((response) => response.json())
                     .then((data) => {
-                        if (data.error) {
-                            console.error("Error:", data.message);
-                            document.querySelector(".error-message-signup").
-                            style.display = "block";
-                            document.querySelector(".error-message-signup").
-                            innerText = "Your password or username is incorrect, please try again";
-                        } else {
-                            this.form.submit();
-                        }
+                       if(data.error){
+                        console.error("Error:", data.message);  
+						document.querySelector(".error-message-signup-all").
+						style.display = "block";
+						document.querySelector(".error-message-signup-all").
+						innerText = "Error";
+                        
+
+                       }else{
+                            console.log("Form submitted")
+                            // this.signupForm.style.display = 'none'
+                            alert('You have successfully signed up. Use your details to log in.')
+                            this.signupForm.submit() 
+                        }                     
                     })
                     .catch((data) => {
                         console.error('Error', data.message)
@@ -52,6 +59,8 @@ class Signup {
         })
     }
 
+    isNumber(n) { return !isNaN(parseFloat(n)) && !isNaN(n - 0) }
+
 	validateFields(field) {
 		if (field.value.trim() === "") {
 			this.setStatus(
@@ -59,8 +68,26 @@ class Signup {
 				`${field.previousElementSibling.innerText} cannot be blank`,
 				"error"
 			);
+			return false;  
+		} 	
+        if (field.type == "text"){
+        if (this.isNumber(field.value) == true) {
+			this.setStatus(
+				field,
+				`${field.previousElementSibling.innerText} cannot be a number`,
+				"error"
+			);
 			return false;
-		} else {
+        }
+       }else {
+            if(this.pwdRepeat.value !== this.password.value){
+                this.setStatus(
+                    this.pwdRepeat,
+                    this.pwdRepeat.previousElementSibling.innerText = 'password repeat must be the same',
+                    "error"
+                );
+                return false
+            }
 			if (field.type == "password") {
 				if (field.value.length < 8) {
 					this.setStatus(
@@ -68,11 +95,14 @@ class Signup {
 						`${field.previousElementSibling.innerText} must be at least 8 characters`,
 						"error"
 					);
-					return false;
-				} else {
-					this.setStatus(field, null, "success");
-					return true;
+					return false
 				}
+             
+                else {
+					this.setStatus(field, null, "success");
+					return true
+				}
+               
 			} else {
 				this.setStatus(field, null, "success");
 				return true;
@@ -87,20 +117,29 @@ class Signup {
 			if (errorMessage) {
 				errorMessage.innerText = "";
 			}
-			field.classList.remove("input-error");
+			field.classList.remove("is-invalid");
 		}
 
 		if (status == "error") {
 			errorMessage.innerText = message;
-			field.classList.add("input-error");
+			field.classList.add("is-invalid");
 		}
 	}
 
+  
+
 }
 
-// const signupForm = document.querySelector(".signupForm");
-// if (signupForm) {
-// 	const fields = ["username", "fname", "lname", "email", "password"];
-// 	const validator = new Signup(form, fields);
-// }
+const signupForm = document.querySelector(".signupForm")
+const signupMessage = document.querySelector('.signup-success-message')
+const pwdRepeat = document.querySelector('#repeatPassword')
+const password = document.querySelector('#password')
+if (signupForm) {
+
+        const fields = ["username", "fname", "lname", "email", "password", "repeatPassword"];
+        const signup = new Signup(signupForm, fields, pwdRepeat, password);
+        signup.addUser()
+     
+};
+
 

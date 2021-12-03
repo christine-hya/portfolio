@@ -54,6 +54,10 @@ a :visited {
   color: red;
 }
 
+.signup-success-message {
+  display: none;
+}
+
 .breadcrumb {
   background-color: transparent;
   padding: 0;

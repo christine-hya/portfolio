@@ -1,6 +1,5 @@
 class Auth {
 	constructor() {
-        // document.querySelector("body").style.display = "none";
 		const auth = localStorage.getItem("auth");
 		const user = JSON.parse(localStorage.getItem("user"));
 		this.validateAuth(auth, user);
@@ -11,7 +10,6 @@ class Auth {
 			// window.location.replace("/");
             // 
 		} else {
-            // document.querySelector("body").style.display = "block";
 			const span_username = document.querySelector("#fullname");
 			if(span_username){
 			span_username.innerHTML = user.fname + " " + user.lname;

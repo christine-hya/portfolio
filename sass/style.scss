@@ -1,3 +1,4 @@
+$primary: rgb(0, 132, 255);
 $error: red;
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css");
@@ -55,6 +56,10 @@ a {
 .error-message-signup {
 	font-size: 0.85rem;
 	color: $error;
+}
+
+.signup-success-message {
+    display: none;
 }
 
 .breadcrumb {

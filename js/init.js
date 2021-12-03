@@ -7,7 +7,7 @@ $(function () {
     loadScript('js/categories.js', categoriesSetup)
     loadScript('js/products.js', productsSetup)
     loadScript('js/auth.js', userInfo)
-    loadScript('js/signup.js', signupUser)
+    loadScript('js/signup.js')
     loadScript('js/login.js')
 });
 
@@ -48,20 +48,19 @@ var productsSetup = function () {
 }
 
 //signup
-const signupUser = function () {
+// const signupUser = function () {
 
 
-    let signupForm = document.querySelector(".signup")
-    if (signupForm) {
-        signupForm.addEventListener("click", (e) => {
-            // const signup = new Signup()
+//     let signupForm = document.querySelector(".signup")
+//     if (signupForm) {
+//         // signupForm.addEventListener("click", (e) => {
 
-            const fields = ["username", "fname", "lname", "email", "password"];
-            const signup = new Signup(form, fields);
-            signup.addUser()
-        })
-    };
-}
+//             const fields = ["username", "fname", "lname", "email", "password"];
+//             const signup = new Signup(form, fields);
+//             signup.addUser()
+//         // })
+//     };
+// }
 
 
 

@@ -131,12 +131,12 @@ class Login {
             if (errorMessage) {
                 errorMessage.innerText = "";
             }
-            field.classList.remove("input-error");
+            field.classList.remove("is-invalid");
         }
 
         if (status == "error") {
             errorMessage.innerText = message;
-            field.classList.add("input-error");
+            field.classList.add("is-invalid");
         }
     }
 }

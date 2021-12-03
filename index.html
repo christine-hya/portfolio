@@ -25,39 +25,46 @@
           <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
-          <div class="error-message-signup-all"></div>
-          <form class="p-4 p-md-5 border rounded-3 bg-light signupForm">
+          
+          <form  action="login.html" class="p-4 p-md-5 border rounded-3 bg-light signupForm">
+            <div class="error-message-signup-all"></div>
             
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="username" placeholder="Username">
                 <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Username">                
+                <span class="error-message-signup"></span>
               </div>
 
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="fname" placeholder="Name">
                 <label for="fname">Name</label>
+                <input type="text" class="form-control" id="fname" placeholder="Name">               
+                <span class="error-message-signup"></span>
               </div>
 
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="lname" placeholder="Surname">
                 <label for="lname">Surname</label>
+                <input type="text" class="form-control" id="lname" placeholder="Surname">             
+                <span class="error-message-signup"></span>
               </div>
 
               <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="email" placeholder="name@example.com">
-              <label for="floatingInput">Email address</label>
+                <label for="floatingInput">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">           
+                <span class="error-message-signup"></span>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="password" placeholder="Password">
               <label for="floatingPassword">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Password">      
+              <span class="error-message-signup"></span>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="repeatPassword" placeholder="Repeat password">
               <label for="floatingPassword">Repeat password</label>
+              <input type="password" class="form-control" id="repeatPassword" placeholder="Repeat password">          
+              <span class="error-message-signup"></span>
             </div>
-            <span class="error-message-signup"></span>
+            
 
             <div class="checkbox mb-3">
               <label>
@@ -68,9 +75,13 @@
             <hr class="my-4">
             <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
           </form>
+
+          <!-- <span class="signup-success-message">You have successfully signed up. Log in here.</span> -->
         </div>
       </div>
     </div>
+
+    
 
     <!--FOOTER-->
     <div id="footer-placeholder"></div>
