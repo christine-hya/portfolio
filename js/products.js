@@ -8,7 +8,7 @@ class Products {
             type: 'GET',
             url: this.apiUrl + "/services",
             success: function (data) {
-                console.log(data)
+                // console.log(data)
                 $(data['response']).each(function(index, product){
                     $(".products").append(
                         '<div class="col-md-3"><div class="product"><div class="image"><img src="'+ product.image +

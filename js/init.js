@@ -6,9 +6,12 @@ $(function () {
     }
     loadScript('js/categories.js', categoriesSetup)
     loadScript('js/products.js', productsSetup)
+    loadScript('js/addtocart.js', addtoCart)
     loadScript('js/auth.js', userInfo)
     loadScript('js/signup.js')
     loadScript('js/login.js')
+    loadScript('js/cart.js', cartInfo)
+    
 });
 
 //display header 
@@ -46,6 +49,39 @@ var productsSetup = function () {
         products.getSingleProduct(urlParam('product'))
     }
 }
+
+const cartInfo = function () {
+    let cart = new Cart()
+
+    if (localStorage.getItem("user") != null) {
+        cart.displayCart()
+        //     let user = JSON.parse(localStorage.user)
+        //     cart.getCart(user.id)
+        //     setTimeout(() => {
+        //         let cartItems = JSON.parse(localStorage.getItem('cart'))
+        //         cart.getCartDisplay(cartItems)
+        //     },1000)
+    }
+
+}
+
+//add to cart
+
+const addtoCart = function () {
+
+    let addtoCartButton = document.getElementById('addtoCart')
+    if (addtoCartButton) {
+        addtoCartButton.addEventListener("click", (e) => {
+            //add to cart
+            console.log('hello')
+            let cartItem = new Cartitem
+            // if (urlParam('product')) {
+                cartItem.addItem(urlParam('product'))
+            // }
+        });
+    }
+}
+
 
 //signup
 // const signupUser = function () {
