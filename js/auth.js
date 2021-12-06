@@ -7,8 +7,6 @@ class Auth {
 
 	validateAuth(auth, user) {
 		if (auth != 1) {
-			// window.location.replace("/");
-            // 
 		} else {
 			const span_username = document.querySelector("#fullname");
 			if(span_username){

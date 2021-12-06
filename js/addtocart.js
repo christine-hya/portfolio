@@ -4,10 +4,9 @@ class Cartitem {
         let user = JSON.parse(localStorage.user)
 
         const data = {
-            userId: user.id
+            userId: user['userId']
         };
-        console.log(data)
-        console.log(user.id)
+      
         fetch("http://localhost/api-for-shop/api/v1/pages/" + "addtocart?product=" + slug, {
             method: 'POST',
             body: JSON.stringify(data),
@@ -19,9 +18,12 @@ class Cartitem {
         .then((response) => response.json())
         .then((data) => {
             console.log("Product added")
-            console.log(data.userId)
-            data.message
+            console.log('Success:', data)
         })
 
+        .catch((error) => {
+            console.error('Error:', error)
+          })
+          location.reload()
     }
 }

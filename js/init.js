@@ -11,7 +11,7 @@ $(function () {
     loadScript('js/signup.js')
     loadScript('js/login.js')
     loadScript('js/cart.js', cartInfo)
-    
+    loadScript('js/delete.js', deletefromCart)
 });
 
 //display header 
@@ -54,6 +54,7 @@ const cartInfo = function () {
     let cart = new Cart()
 
     if (localStorage.getItem("user") != null) {
+        // cart.findUserCart()
         cart.displayCart()
         //     let user = JSON.parse(localStorage.user)
         //     cart.getCart(user.id)
@@ -66,21 +67,40 @@ const cartInfo = function () {
 }
 
 //add to cart
-
 const addtoCart = function () {
-
-    let addtoCartButton = document.getElementById('addtoCart')
+    let addtoCartButton = document.querySelector('#addtoCart')
+    let loginMsg = document.querySelector('.login-cart')
     if (addtoCartButton) {
-        addtoCartButton.addEventListener("click", (e) => {
-            //add to cart
-            console.log('hello')
-            let cartItem = new Cartitem
-            // if (urlParam('product')) {
-                cartItem.addItem(urlParam('product'))
-            // }
-        });
+
+        //when user is not logged in    
+        if (localStorage.getItem("user") == null) {
+            addtoCartButton.style.display = "none"
+            loginMsg.style.display = "block"
+        }
+        else {
+            addtoCartButton.style.display = "block"
+            loginMsg.style.display = "none"
+
+            addtoCartButton.addEventListener("click", (e) => {
+
+                let cartItem = new Cartitem
+                if (urlParam('product')) {
+                    cartItem.addItem(urlParam('product'))
+                }
+            });
+        }
+
     }
 }
+
+//delete item from cart
+const deletefromCart = function () {
+    if (urlParam('item')) {
+        let deleteItem = new Deleteitem
+        deleteItem.deleteItem(urlParam('item'))
+    }
+}
+
 
 
 //signup

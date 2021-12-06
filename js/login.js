@@ -83,15 +83,12 @@ class Login {
                         } else {
                             localStorage.setItem("user", JSON.stringify(data));
                             localStorage.setItem("auth", 1);
-                            this.form.submit();
-                          
+                            this.form.submit();                         
                         }
-
                     })
                     .catch((data) => {
                         console.error('Error:', data.message);
                     })
-
             }
         });
     }

@@ -4,43 +4,56 @@ class Products {
     }
 
     getNewProducts() {
-        $.ajax({
-            type: 'GET',
-            url: this.apiUrl + "/services",
-            success: function (data) {
-                // console.log(data)
-                $(data['response']).each(function(index, product){
-                    $(".products").append(
-                        '<div class="col-md-3"><div class="product"><div class="image"><img src="'+ product.image +
-                        '" class="img-fluid"></div><div class="info"><a href="product.html?product=' 
-                        + product.slug + 
-                        '"><div class="title">' + product.title + '<br>R' + Math.round(product.price) + '</div></div></a></div></div>'
-                    )
-                })
-            },
+
+        fetch(this.apiUrl + "/services").then(
+            res => {
+                res.json().then(
+                    data => {
+                        var temp = "";
+
+                        //start loop
+                        data['response'].forEach((product) => {
+                            temp += '<div class="col-md-3"><div class="product"><div class="image"><img src="'
+                                + product.image +
+                                '" class="img-fluid"></div><div class="info"><a href="product.html?product='
+                                + product.slug +
+                                '"><div class="title">'
+                                + product.title + '<br>R' + Math.round(product.price) + '</div></div></a></div></div>';
+
+                        })
+                        //close the for loop
+                        document.querySelector('.products').innerHTML = temp;
+                    }
+                )
+            }
+        )
+        .catch((error) => {
+            console.error('Error:', error)
         })
     }
 
     getSingleProduct(slug) {
-        $.ajax({
-            type: 'GET',
-            url: this.apiUrl + "single?product=" + slug,
-            success: function (data) {
-          
-            $(data['response']).each(function(index, product){
-            $('.product_image').html('<img src="' + product.image + '" class="img-fluid">')
+        fetch(this.apiUrl + "single?product=" + slug).then(
+            res => {
+                res.json().then(
+                    data => {
 
-            $('.product_title').html(product.title)
-            $('.product_price').html('R' + Math.round(product.price))
-            $('.product_description').html('<p>' + product.description + '</p>')
-            $('.breadcrumb').html(
-                '<a class="text-dark" href="index.html">Home</a><span class="sep">></span><a class="text-dark" href="/category.html?category='
-                + product.categories
-                + '">' + toTitleCase(product.categories) + '</a><span class="sep">></span>'  + product.title             
-            )
+                        //start loop
+                        data['response'].forEach((product) => {
+                            document.querySelector('.product_image').innerHTML = '<img src="' + product.image + '" class="img-fluid">'
+                            document.querySelector('.product_title').innnerHTML = product.title
+                            document.querySelector('.product_price').innerHTML = 'R' + Math.round(product.price)
+                            document.querySelector('.product_description').innerHTML = '<p>' + product.description + '</p>'
+                            document.querySelector('.breadcrumb').innerHTML = '<a class="text-dark" href="index.html">Home</a><span class="sep">></span><a class="text-dark" href="/category.html?category='
+                                + product.categories + '">' + toTitleCase(product.categories) + '</a><span class="sep">></span>' + product.title
+                        })
+                        //close the for loop                      
+                    }
+                )
+            }
+        )
+            .catch((error) => {
+                console.error('Error:', error)
             })
-     
-            },
-        })
     }
 }
