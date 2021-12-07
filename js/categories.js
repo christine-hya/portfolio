@@ -10,7 +10,7 @@ class Categories {
             res => {
                 res.json().then(
                     data => {
-                        console.log(data['response']);
+                       
                         if (data['response'].length > 0) {
                             var temp = "";
 
@@ -41,7 +41,6 @@ class Categories {
             res => {
                 res.json().then(
                     data => {
-                        console.log(data);
 
                         var temp = "";
 

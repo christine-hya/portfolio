@@ -10,6 +10,7 @@ $(function () {
     loadScript('js/auth.js', userInfo)
     loadScript('js/signup.js')
     loadScript('js/login.js')
+    loadScript('js/contact.js')
     loadScript('js/cart.js', cartInfo)
     loadScript('js/delete.js', deletefromCart)
 });
@@ -31,7 +32,7 @@ $.get('/templates/footer.html', function (data) {
 })
 
 //get categories from api
-var categoriesSetup = function () {
+const categoriesSetup = function () {
     let categories = new Categories()
     categories.getAllCategories()
     if (urlParam('category')) {
@@ -40,7 +41,7 @@ var categoriesSetup = function () {
 }
 
 //get products from api
-var productsSetup = function () {
+const productsSetup = function () {
     let products = new Products()
     if ($('.products.new').length) {
         products.getNewProducts(8)
@@ -63,7 +64,6 @@ const cartInfo = function () {
         //         cart.getCartDisplay(cartItems)
         //     },1000)
     }
-
 }
 
 //add to cart
@@ -77,6 +77,7 @@ const addtoCart = function () {
             addtoCartButton.style.display = "none"
             loginMsg.style.display = "block"
         }
+        //when user is logged in
         else {
             addtoCartButton.style.display = "block"
             loginMsg.style.display = "none"
@@ -101,25 +102,6 @@ const deletefromCart = function () {
     }
 }
 
-
-
-//signup
-// const signupUser = function () {
-
-
-//     let signupForm = document.querySelector(".signup")
-//     if (signupForm) {
-//         // signupForm.addEventListener("click", (e) => {
-
-//             const fields = ["username", "fname", "lname", "email", "password"];
-//             const signup = new Signup(form, fields);
-//             signup.addUser()
-//         // })
-//     };
-// }
-
-
-
 //log in
 const userInfo = function () {
     const auth = new Auth()
@@ -132,23 +114,6 @@ const userInfo = function () {
     }
 }
 
-
-// var userInfo = function() {
-//     let user = new User(); 
-//instantiate auth class here on form submit
-// $('form.login').submit(function(e){
-//     e.preventDefault()
-//     var username = $('#username').val()
-//     var password = $('#password').val()
-//     user.doLogin(username, password)
-// })
-
-
-//     if($('.userAccount').length){
-//         var userAccount = JSON.parse(localStorage.user)
-//         // user.getAccountInfo(userAccount)
-//     } 
-// }
 
 //function to load js scripts
 function loadScript(url, callback) {

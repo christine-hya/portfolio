@@ -17,13 +17,13 @@ class Cartitem {
 
         .then((response) => response.json())
         .then((data) => {
-            console.log("Product added")
-            console.log('Success:', data)
+            alert("Product added")
+            console.log('Success:', data.message)
         })
 
         .catch((error) => {
             console.error('Error:', error)
           })
-          location.reload()
+        //   location.reload()
     }
 }
