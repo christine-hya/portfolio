@@ -15,23 +15,23 @@
 
     <div id="nav-placeholder"></div>
 
-    <div class="container-fluid">
+    <div class="container-fluid mx-auto">
         <div class="breadcrumb"><a class="text-dark" href="index.html">Home</a><span class="sep">></span>Your Account
         </div>
         <div class="container">
             <h1 class="text-center">Dashboard</h1>
             <p class="text-center">Welcome <span id="fullname"></span><a href="#" class="logout">Log Out</a></p>
         </div>
-        <h1>Your account</h1>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card">
+    
+ 
+                <div class="card w-50 mx-auto">
                     <div class="card-body">
 
                         <form method="post" class="updateAccount">
                             <input type="text" id="username" name="username" class="form-control" readonly>
                             <label>User name</label>
-                            <h3>Personal Information</h3>
+
+                            <h3>Your account</h3>
                             <div class="row">
 
                                 <div class="col-md-6">
@@ -45,34 +45,20 @@
                                 </div>
 
                             </div>
-                            <input type="text" name="phone" id="phone" class="form-control">
-                            <label for="phone">Phone</label>
                             <input type="text" name="email" id="email" class="form-control">
                             <label for="email">Email</label>
 
-                            <h3>Address</h3>
-                            <label for="address">Address</label>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" name="city" id="city" class="form-control">
-                                    <label for="city">City</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="zip" id="zip" class="form-control">
-                                    <label for="zip">Zip code</label>
-                                </div>
-                            </div>
+                        <input type="password" class="form-control">
+                        <label for="updatepassword">Update password</label>
+
+                        <input type="password" class="form-control">
+                        <label for="repeatnewpassword">Repeat new password</label>
                             <br>
                             <button class="btn btn-success">Update account</button>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col">
-
-        </div>
     </div>
 
     </div>
