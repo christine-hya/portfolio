@@ -14,6 +14,7 @@ $(function () {
     loadScript('js/cart.js', cartInfo)
     loadScript('js/delete.js', deletefromCart)
     loadScript('js/changepwd.js')
+    loadScript('js/orders.js')
 });
 
 //display header 

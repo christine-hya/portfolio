@@ -1,18 +1,18 @@
-class Contact {
-    constructor(contactForm, contactFields) {
-        this.contactForm = contactForm
-        this.contactFields = contactFields
-        this.submitMessage()
+class Orders {
+    constructor(orderForm, orderFields) {
+        this.orderForm = orderForm
+        this.orderFields = orderFields
+        this.submitOrder()
     }
 
-    submitMessage() {
+    submitOrder() {
         let self = this;
 
-        if (this.contactForm) {
-            this.contactForm.addEventListener("submit", (e) => {
+        if (this.orderForm) {
+            this.orderForm.addEventListener("submit", (e) => {
                 e.preventDefault();
                 let error = 0;
-                self.contactFields.forEach((field) => {
+                self.orderFields.forEach((field) => {
                     const input = document.querySelector(`#${field}`);
                     if (self.validateFields(input) == false) {
                         error++;
@@ -20,15 +20,22 @@ class Contact {
                 });
 
                 if (error == 0) {
+                    const cart = JSON.parse(localStorage.getItem("cart"))
+                    let order = []
+                    cart.forEach((product) => {
+                        order.push(product.title)                        
+                    })
+                    console.log(order)
                     const data = {
-                        name: document.querySelector('#name').value,
-                        surname: document.querySelector('#surname').value,
-                        email: document.querySelector('#contactemail').value,
-                        message: document.querySelector('#messagebody').value,
-                        
+                        name: document.querySelector('#ordername').value,
+                        surname: document.querySelector('#ordersurname').value,
+                        email: document.querySelector('#ordercontactemail').value,
+                        message: document.querySelector('#ordermessage').value,
+                        cartItems: order.toString()                        
                     };
+                    console.log(data)
 
-                    fetch('http://localhost/api-for-shop/api/v1/pages/contact', {
+                    fetch('http://localhost/api-for-shop/api/v1/pages/submitorder', {
                         method: 'POST',
                         body: JSON.stringify(data),
                         header: {
@@ -39,14 +46,14 @@ class Contact {
                         .then((data) => {
                             if (data.error) {
                                 console.error("Error:", data.message);
-                                document.querySelector(".error-message-contact-all").
+                                document.querySelector(".error-message-order-all").
                                     style.display = "block";
-                                document.querySelector(".error-message-contact-all").
+                                document.querySelector(".error-message-order-all").
                                     innerText = "Error";
 
                             } else {
                                 alert(data.message)
-                                this.contactForm.submit()
+                                this.orderForm.submit()
                             }
                         })
                         .catch((data) => {
@@ -88,7 +95,7 @@ class Contact {
 
 
 setStatus(field, message, status) {
-    const errorMessage = field.parentElement.querySelector(".error-message-contact");
+    const errorMessage = field.parentElement.querySelector(".error-message-order");
 
     if (status == "success") {
         if (errorMessage) {
@@ -106,9 +113,9 @@ setStatus(field, message, status) {
 }
 
 
-const contactForm = document.querySelector(".contactForm")
-const contactFields = ["name", "surname", "contactemail", "messagebody"];
-const contact = new Contact(contactForm, contactFields);
+const orderForm = document.querySelector(".orderForm")
+const orderFields = ["ordername", "ordersurname", "ordercontactemail", "ordermessage"];
+const order = new Orders(orderForm, orderFields);
 
 
 

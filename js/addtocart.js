@@ -15,15 +15,16 @@ class Cartitem {
             },
         })
 
-        .then((response) => response.json())
+        .then((response) => response.text())
         .then((data) => {
-            alert("Product added")
-            console.log('Success:', data.message)
+            alert("Item added")
+            console.log('Success:', data)
+            location.reload()
         })
 
         .catch((error) => {
             console.error('Error:', error)
           })
-        //   location.reload()
+          
     }
 }
