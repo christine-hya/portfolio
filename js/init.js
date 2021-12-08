@@ -13,6 +13,7 @@ $(function () {
     loadScript('js/contact.js')
     loadScript('js/cart.js', cartInfo)
     loadScript('js/delete.js', deletefromCart)
+    loadScript('js/changepwd.js')
 });
 
 //display header 

@@ -1,21 +1,3 @@
-// class User {
-
-//     constructor(){
-//         this.apiUrl = "https://fakestoreapi.com/";
-//     }
-
-// getAccountInfo(user){
-//     console.log(user)
-//     $('#username').val(user.username)
-//     $('#fname').val(user.name.firstname)
-//     $('#lname').val(user.name.lastname)
-//     $('#phone').val(user.phone)
-//     $('#email').val(user.email)
-//     $('#address').val(user.address.number + ' ' + user.address.street)
-//     $('#city').val(user.address.city)
-//     $('#zip').val(user.address.zipcode)
-// }
-
 
 class Login {
     constructor(form, fields) {
@@ -37,7 +19,6 @@ class Login {
                 }
             });
             if (error == 0) {
-                //do login api here
                 var data = {
                     username: document.querySelector('#username').value,
                     password: document.querySelector('#password').value,
