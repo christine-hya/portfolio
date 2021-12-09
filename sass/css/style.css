@@ -1,7 +1,32 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css");
 body {
   color: #333;
-  font-size: 16px; }
+  font-size: 16px;
+  padding: 0%;
+  margin: 0%;
+  margin-top: 0%;
+  font-family: 'Fira Sans', sans-serif; }
+
+html {
+  box-sizing: border-box;
+  margin-top: 0%;
+  padding-top: 0%; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  scroll-behavior: smooth; }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2; }
 
 h1 {
   font-size: 2.25rem; }
@@ -11,15 +36,133 @@ h2 {
 
 a {
   text-decoration: none !important;
-  color: #fff !important; }
+  color: #333 !important; }
   a :hover,
   a :active,
   a :visited {
     text-decoration: none !important;
-    color: #fff !important; }
+    color: #333 !important; }
 
 .text-end a {
   float: right; }
+
+/* TITLE */
+header {
+  height: 100px; }
+
+.navbar-header {
+  height: 150px; }
+
+#background {
+  background-image: url("./images/cover-image-christine.jpg");
+  background-color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  max-width: 100vw;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  margin-bottom: 0;
+  margin-top: 0; }
+
+.title-container {
+  position: absolute;
+  left: 38%;
+  top: 70%;
+  color: white; }
+
+.tagline {
+  font-size: x-large;
+  font-weight: 700; }
+
+.arrow-down {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: white; }
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(-5px); }
+  100% {
+    transform: translateY(0); } }
+.bounce {
+  animation-name: arrowAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-direction: reverse; }
+
+.arrow {
+  font-weight: bold;
+  font-size: xx-large; }
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c2bbc4;
+  opacity: 0.9;
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+  visibility: hidden;
+  z-index: -10; }
+
+.modal-container {
+  padding: 30px;
+  margin: 30px; }
+
+.open-modal {
+  visibility: visible;
+  z-index: 10; }
+
+.close-btn {
+  position: fixed;
+  text-align: end;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: x-large;
+  font-weight: bold;
+  float: right;
+  padding: 30px;
+  left: 90%; }
+
+.pointer {
+  cursor: pointer; }
+
+.error-message-all {
+  font-size: 0.85rem;
+  color: red;
+  text-align: center;
+  margin: 1rem 0;
+  display: none; }
+
+.error-message {
+  font-size: 0.85rem;
+  color: red; }
+
+.error-message-signup-all {
+  font-size: 0.85rem;
+  color: red;
+  text-align: center;
+  margin: 1rem 0;
+  display: none; }
+
+.error-message-signup {
+  font-size: 0.85rem;
+  color: red; }
+
+.signup-success-message {
+  display: none; }
 
 .breadcrumb {
   background-color: transparent;
@@ -64,5 +207,11 @@ a {
       transform: translate(-50%, -50%); }
   .product .info:hover {
     opacity: 70%; }
+
+.about {
+  background-color: #B5DCEB; }
+
+.map {
+  background-color: #CC59D2; }
 
 /*# sourceMappingURL=style.css.map */

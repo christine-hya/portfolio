@@ -15,6 +15,7 @@ $(function () {
     loadScript('js/delete.js', deletefromCart)
     loadScript('js/changepwd.js')
     loadScript('js/orders.js')
+    loadScript('js/modals.js')
 });
 
 //display header 
@@ -22,7 +23,7 @@ $.get('/templates/navigation.html', function (data) {
     $('#nav-placeholder').replaceWith(data)
 
     if (localStorage.getItem('user') == null) {
-        document.querySelector('.accountNav').innerHTML = '<li class="nav-item"><a class="nav-link active" aria-current="page" href="login.html">Log in</a></li>'
+        document.querySelector('.accountNav').innerHTML = '<li class="nav-item"><a class="nav-link active" aria-current="page" href="login.html">Log in</a></li><li class="nav-item"><a class="nav-link active modal-btn-2 pointer" aria-current="page">Sign up</a></li>'
     } else {
         document.querySelector('.accountNav').innerHTML = '<li class="nav-item"><a class="nav-link active logout" aria-current="page" href="#">Log out</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="account.html">Account</a></li>'
     }
