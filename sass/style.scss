@@ -2,6 +2,8 @@ $primary: rgb(0, 132, 255);
 $error: red;
 $background-one: #B5DCEB;
 $background-two: #CC59D2;
+$footer: #0a0a0a;
+$third: #FDE12D;
 
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"); 
@@ -64,7 +66,13 @@ a {
     float: right;
 }
 
-/* TITLE */
+
+.footer-height{
+    height: 150px;
+    background-color: $footer;
+    // opacity: 1;
+    --bs-bg-opacity: 1;
+}
 
 header{
     height: 100px;
@@ -73,6 +81,16 @@ header{
 .navbar-header{
     height: 150px;
 }
+.navbar-custom {
+    background-image: none;
+}
+
+.cart {
+    color: $third;
+}
+
+
+/* TITLE */
 
  #background {
     background-image: url("./images/cover-image-christine.jpg");
@@ -91,14 +109,13 @@ header{
 
 .title-container {
     position: absolute;
-    left: 38%;
-    top: 70%;
-    color: white;
+    left: 55%;
+    top: 65%;
 } 
 
 .tagline{
-    font-size: x-large;
-    font-weight: 700;
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 .arrow-down {
@@ -125,6 +142,15 @@ header{
 .arrow {
     font-weight: bold;
     font-size: xx-large;
+}
+
+/* MAIN SECTION */
+.portfolio {
+    background-color: $background-one;
+}
+
+.services {
+    background-color: $background-two;
 }
 
 /* MODAL */
@@ -229,7 +255,7 @@ header{
         }
     }
     .info {
-        background-color: #1B998B;
+        background-color: $third;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -260,6 +286,10 @@ header{
 
 .map {
     background-color: $background-two;
+}
+
+.responsive-image {
+    max-width: 100%;
 }
 
 

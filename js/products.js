@@ -15,7 +15,7 @@ class Products {
                         data['response'].forEach((product) => {
                             temp += '<div class="col-md-3"><div class="product"><div class="image"><img src="'
                                 + product.image +
-                                '" class="img-fluid"></div><div class="info"><a href="product.html?product='
+                                '" class="img-fluid"></div><div class="info"><a class="fw-bold fs-4" href="product.html?product='
                                 + product.slug +
                                 '"><div class="title">'
                                 + product.title + '<br>R' + Math.round(product.price) + '</div></div></a></div></div>';

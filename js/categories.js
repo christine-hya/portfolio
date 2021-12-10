@@ -17,7 +17,7 @@ class Categories {
                             //start loop
                             data['response'].forEach((category) => {
 
-                                temp += '<li class="text-center"><a class="dropwdown-item" href="/category.html?category='
+                                temp += '<li class="text-center"><a class="dropwdown-item text-light" href="/category.html?category='
                                     + encodeURIComponent(category.categories)
                                     + '">' +
                                     toTitleCase(category.categories) +
@@ -48,7 +48,7 @@ class Categories {
                         data['response'].forEach((product) => {
                             temp += '<div class="col-md-3"><div class="product"><div class="image"><img src="'
                                 + product.image +
-                                '" class="img-fluid"></div><div class="info"><a href="product.html?product='
+                                '" class="img-fluid"></div><div class="info"><a class="fw-bold fs-4" href="product.html?product='
                                 + product.slug +
                                 '"><div class="title">'
                                 + product.title + '<br>R'

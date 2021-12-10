@@ -46,13 +46,24 @@ a {
 .text-end a {
   float: right; }
 
-/* TITLE */
+.footer-height {
+  height: 150px;
+  background-color: #0a0a0a;
+  --bs-bg-opacity: 1; }
+
 header {
   height: 100px; }
 
 .navbar-header {
   height: 150px; }
 
+.navbar-custom {
+  background-image: none; }
+
+.cart {
+  color: #FDE12D; }
+
+/* TITLE */
 #background {
   background-image: url("./images/cover-image-christine.jpg");
   background-color: white;
@@ -69,13 +80,12 @@ header {
 
 .title-container {
   position: absolute;
-  left: 38%;
-  top: 70%;
-  color: white; }
+  left: 55%;
+  top: 65%; }
 
 .tagline {
-  font-size: x-large;
-  font-weight: 700; }
+  font-size: xx-large;
+  font-weight: bold; }
 
 .arrow-down {
   width: 100%;
@@ -100,6 +110,13 @@ header {
 .arrow {
   font-weight: bold;
   font-size: xx-large; }
+
+/* MAIN SECTION */
+.portfolio {
+  background-color: #B5DCEB; }
+
+.services {
+  background-color: #CC59D2; }
 
 /* MODAL */
 .modal-overlay {
@@ -190,7 +207,7 @@ header {
       left: 50%;
       transform: translate(-50%, -50%); }
   .product .info {
-    background-color: #1B998B;
+    background-color: #FDE12D;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -213,5 +230,8 @@ header {
 
 .map {
   background-color: #CC59D2; }
+
+.responsive-image {
+  max-width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
