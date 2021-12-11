@@ -13,7 +13,7 @@ class Products {
 
                         //start loop
                         data['response'].forEach((product) => {
-                            temp += '<div class="col-md-3"><div class="product"><div class="image"><img src="'
+                            temp += '<div class="col-md-3"><div class="product bg-light"><div class="image"><img src="'
                                 + product.image +
                                 '" class="img-fluid"></div><div class="info"><a class="fw-bold fs-4" href="product.html?product='
                                 + product.slug +

@@ -90,8 +90,9 @@ class Login {
         }
 
         if (status == "error") {
-            errorMessage.innerText = message;
-            field.classList.add("is-invalid");
+            errorMessage.innerText = message
+            field.classList.add("is-invalid")
+            
         }
     }
 }
@@ -99,6 +100,7 @@ class Login {
 const form = document.querySelector(".loginForm");
 if (form) {
     const fields = ["username", "password"];
-    const validator = new Login(form, fields);
+    const validator = new Login(form, fields)
+    console.log(validator.fields)
 }
 

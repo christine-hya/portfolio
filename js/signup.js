@@ -74,7 +74,7 @@ class Signup {
                 field,
                 `${field.previousElementSibling.innerText} cannot be blank`,
                 "error"
-            );
+            )
             return false;
         }
         if (field.type == "text") {
@@ -83,7 +83,7 @@ class Signup {
                     field,
                     `${field.previousElementSibling.innerText} cannot be a number`,
                     "error"
-                );
+                )
                 return false;
             }
         } else {
@@ -92,7 +92,7 @@ class Signup {
                     this.pwdRepeat,
                     this.pwdRepeat.previousElementSibling.innerText = 'password repeat must be the same',
                     "error"
-                );
+                )
                 return false
             }
             if (field.type == "password") {
@@ -106,13 +106,13 @@ class Signup {
                 }
 
                 else {
-                    this.setStatus(field, null, "success");
+                    this.setStatus(field, null, "success")
                     return true
                 }
 
             } else {
-                this.setStatus(field, null, "success");
-                return true;
+                this.setStatus(field, null, "success")
+                return true
             }
         }
     }
@@ -144,6 +144,7 @@ const fields = ["username", "fname", "lname", "email", "password", "repeatPasswo
 const signup = new Signup(signupForm, fields, pwdRepeat, password);
 
 const signupFormContainer = document.querySelector("#sign-up-form")
+
 if(signupFormContainer){
 //when user is not logged in    
 if (localStorage.getItem("user") == null) {
