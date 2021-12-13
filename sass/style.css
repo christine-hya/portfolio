@@ -5,68 +5,65 @@ body {
   padding: 0%;
   margin: 0%;
   margin-top: 0%;
-  font-family: 'Fira Sans', sans-serif;
-}
+  font-family: 'Fira Sans', sans-serif; }
 
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-top: 0%;
-  padding-top: 0%;
-}
+  padding-top: 0%; }
 
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  scroll-behavior: smooth;
-}
+  scroll-behavior: smooth; }
 
 h1,
 h2,
 h3,
 h4,
 h5 {
-  line-height: 1.2;
-}
+  line-height: 1.2; }
 
 h1 {
-  font-size: 2.25rem;
-}
+  font-size: 2.25rem; }
 
 h2 {
-  font-size: 2rem;
-}
+  font-size: 2rem; }
 
 a {
   text-decoration: none !important;
-  color: #333 !important;
-}
-
-a :hover,
-a :active,
-a :visited {
-  text-decoration: none !important;
-  color: #333 !important;
-}
+  color: #333 !important; }
+  a :hover,
+  a :active,
+  a :visited {
+    text-decoration: none !important;
+    color: #333 !important; }
 
 .text-end a {
-  float: right;
-}
+  float: right; }
 
-/* TITLE */
+.footer-height {
+  height: 150px;
+  background-color: #0a0a0a;
+  --bs-bg-opacity: 1; }
+
 header {
-  height: 100px;
-}
+  height: 100px; }
 
 .navbar-header {
-  height: 150px;
-}
+  height: 150px; }
 
+.navbar-custom {
+  background-image: none; }
+
+.cart {
+  color: #FDE12D; }
+
+/* TITLE */
 #background {
   background-image: url("./images/cover-image-christine.jpg");
   background-color: white;
@@ -79,74 +76,44 @@ header {
   height: 600px;
   position: relative;
   margin-bottom: 0;
-  margin-top: 0;
-}
+  margin-top: 0; }
 
 .title-container {
   position: absolute;
-  left: 38%;
-  top: 70%;
-  color: white;
-}
+  left: 55%;
+  top: 65%; }
 
 .tagline {
-  font-size: x-large;
-  font-weight: 700;
-}
+  font-size: xx-large;
+  font-weight: bold; }
 
 .arrow-down {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  color: white;
-}
-
-@-webkit-keyframes arrowAnimation {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
+  color: white; }
 
 @keyframes arrowAnimation {
   0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
+    transform: translateY(0); }
   50% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
-  }
+    transform: translateY(-5px); }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
+    transform: translateY(0); } }
 .bounce {
-  -webkit-animation-name: arrowAnimation;
-          animation-name: arrowAnimation;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  animation-direction: reverse;
-}
+  animation-name: arrowAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-direction: reverse; }
 
 .arrow {
   font-weight: bold;
-  font-size: xx-large;
-}
+  font-size: xx-large; }
+
+/* MAIN SECTION */
+.services {
+  background-color: #CC59D2; }
 
 /* MODAL */
 .modal-overlay {
@@ -155,26 +122,20 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #c2bbc4;
-  opacity: 0.9;
-  display: -ms-grid;
+  background-color: rgba(194, 187, 196, 0.9);
   display: grid;
   place-items: center;
-  -webkit-transition: var(--transition);
   transition: var(--transition);
   visibility: hidden;
-  z-index: -10;
-}
+  z-index: -10; }
 
 .modal-container {
   padding: 30px;
-  margin: 30px;
-}
+  margin: 30px; }
 
 .open-modal {
   visibility: visible;
-  z-index: 10;
-}
+  z-index: 10; }
 
 .close-btn {
   position: fixed;
@@ -186,109 +147,97 @@ header {
   font-weight: bold;
   float: right;
   padding: 30px;
-  left: 90%;
-}
+  left: 90%; }
 
 .pointer {
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .error-message-all {
   font-size: 0.85rem;
   color: red;
   text-align: center;
   margin: 1rem 0;
-  display: none;
-}
+  display: none; }
 
 .error-message {
   font-size: 0.85rem;
-  color: red;
-}
+  color: red; }
 
 .error-message-signup-all {
   font-size: 0.85rem;
   color: red;
   text-align: center;
   margin: 1rem 0;
-  display: none;
-}
+  display: none; }
 
 .error-message-signup {
   font-size: 0.85rem;
-  color: red;
-}
+  color: red; }
 
 .signup-success-message {
-  display: none;
-}
+  display: none; }
 
 .breadcrumb {
   background-color: transparent;
-  padding: 0;
-}
-
-.breadcrumb .sep {
-  padding: 0 5px;
-}
+  padding: 0; }
+  .breadcrumb .sep {
+    padding: 0 5px; }
 
 .product {
-  border: 1px solid #c0c0c0;
+  border: 0.5px solid #adb5bd;
   height: 300px;
+  width: 50%;
   margin-bottom: 1rem;
   text-align: center;
-  position: relative;
-}
+  position: relative; }
+  .product .image {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem; }
+    .product .image img {
+      max-height: 80%;
+      max-width: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  .product .info {
+    background-color: #FDE12D;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    min-height: 100%;
+    color: #212529 !important;
+    opacity: 0;
+    transition: all .25 ease;
+    width: 100%; }
+    .product .info .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  .product .info:hover {
+    opacity: 70%; }
 
-.product .image {
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 1rem;
-}
+.blue {
+  background-color: #B5DCEB; }
 
-.product .image img {
-  max-height: 80%;
-  max-width: 80%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
+.pink {
+  background-color: #CC59D2; }
 
-.product .info {
-  background-color: #1B998B;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  min-height: 100%;
-  color: #fff !important;
-  opacity: 0;
-  -webkit-transition: all .25 ease;
-  transition: all .25 ease;
-  width: 100%;
-}
+.yellow {
+  background-color: #FDE12D; }
 
-.product .info .title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
+.responsive-image {
+  max-width: 100%; }
 
-.product .info:hover {
-  opacity: 70%;
-}
+.signupMsg {
+  height: 200px; }
 
-.about {
-  background-color: #B5DCEB;
-}
+.login-bg {
+  background-color: #B5DCEB; }
 
-.map {
-  background-color: #CC59D2;
-}
 /*# sourceMappingURL=style.css.map */

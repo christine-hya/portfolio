@@ -13,9 +13,9 @@ class Products {
 
                         //start loop
                         data['response'].forEach((product) => {
-                            temp += '<div class="col-md-3"><div class="product bg-light"><div class="image"><img src="'
+                            temp += '<div class="col-lg-3"><div class="product m-3 bg-light"><div class="image"><img src="'
                                 + product.image +
-                                '" class="img-fluid"></div><div class="info"><a class="fw-bold fs-4" href="product.html?product='
+                                '" class="img-fluid"></div><div class="info"><a class="fw-bold fs-4 product-links" href="product.html?product='
                                 + product.slug +
                                 '"><div class="title">'
                                 + product.title + '<br>R' + Math.round(product.price) + '</div></div></a></div></div>';
@@ -41,7 +41,7 @@ class Products {
                         //start loop
                         data['response'].forEach((product) => {
                             document.querySelector('.product_image').innerHTML = '<img src="' + product.image + '" class="img-fluid">'
-                            document.querySelector('.product_title').innnerHTML = product.title
+                            document.querySelector('.product_title').innerHTML = product.title
                             document.querySelector('.product_price').innerHTML = 'R' + Math.round(product.price)
                             document.querySelector('.product_description').innerHTML = '<p>' + product.description + '</p>'
                             document.querySelector('.breadcrumb').innerHTML = '<a class="text-dark" href="index.html">Home</a><span class="sep">></span><a class="text-dark" href="/category.html?category='
