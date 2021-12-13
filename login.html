@@ -16,17 +16,17 @@
     <title>Shop Frontend</title>
 </head>
 
-<body>
+<body class="dark">
 
     <div id="nav-placeholder"></div>
 
-    <div class="container-fluid login-bg">
-        <div class="row justify-content-center">
+    <div class="container-fluid pink">
+        <div class="row justify-content-center pt-5">
 
             <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h1>Log into your account</h1>
+                <div class="card rounded-0">
+                    <div class="card-body p-4">
+                        <h1 class="pt-3 text-center">Log into your account</h1>
                         <br>
                         <br>
 
@@ -34,19 +34,20 @@
                         <form action="account.html" class="loginForm">
                             <div class="error-message-all"></div>
 
-                            <div>
+                            <div class="w-75 mx-auto">
+                        
                                 <label for="username">Username</label>
-                                <input type="text" id="username" name="username" class="form-control input">
+                                <input type="text" id="username" name="username" class="form-control input rounded-0">
                                 <span class="error-message"></span>
                             </div>
                             <br>
-                            <div>
+                            <div class="w-75 mx-auto">
                                 <label for="password">Password</label>
-                                <input type="password" id="password" name="password" class="form-control input">
+                                <input type="password" id="password" name="password" class="form-control input rounded-0">
                                 <span class="error-message"></span>
                             </div>
                             <br>
-                            <p><button class="btn btn-lg btn rounded-0 yellow" type="submit">Log in</button></p>
+                            <p class="text-center"><button class="btn btn-lg btn rounded-0 yellow" type="submit">Log in</button></p>
                         </form>
 
                     </div>

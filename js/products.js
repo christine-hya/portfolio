@@ -44,7 +44,7 @@ class Products {
                             document.querySelector('.product_title').innerHTML = product.title
                             document.querySelector('.product_price').innerHTML = 'R' + Math.round(product.price)
                             document.querySelector('.product_description').innerHTML = '<p>' + product.description + '</p>'
-                            document.querySelector('.breadcrumb').innerHTML = '<a class="text-dark" href="index.html">Home</a><span class="sep">></span><a class="text-dark" href="/category.html?category='
+                            document.querySelector('.breadcrumb').innerHTML = '<a href="index.html">Home</a><span class="sep">></span><a href="/category.html?category='
                                 + product.categories + '">' + toTitleCase(product.categories) + '</a><span class="sep">></span>' + product.title
                         })
                         //close the for loop                      

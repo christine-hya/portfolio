@@ -18,28 +18,27 @@
   <title>Shop Frontend</title>
 </head>
 
-<body>
+<body class="dark">
   <!--NAVIGATION-->
-  <div class="bg-dark banner" id="nav-placeholder"></div>
+  <div id="nav-placeholder"></div>
 
   <!--TITLE BANNER-->
-  <div id="background">
+  <div class="container-fluid" id="background">
     <div class="title-container">
       <h1 class="title fw-bold">Hi! I'm Christine.<br>
-        I do web development.</h1>
-      <div class="text-center fs-5 fw-bold">
-        <a class="mx-auto tagline" href="#portfolio"><i class="bi bi-arrow-down bounce arrow fw-bold fs-3 fa-5x"></i></a>
-      </div>
+        I do web development. <a class="mx-auto tagline" href="#portfolio"><i class="bi bi-arrow-down bounce arrow fw-bold fs-2 fa-5x"></i></a></h1>
+
     </div>
   </div>
   </div>
 
   <!--MAIN SECTION-->
-  <div class="container-fluid portfolio p-5" id="portfolio">
+  <div class="container-fluid portfolio p-5 white" id="portfolio">
     <!--PORTFOLIO-->
-    <div class="container">
+    <div class="col-lg-8 mx-auto">
+     
       <h2 class="pb-3 fw-bold">Projects</h2>
-      <a class="portfolio-links modal-btn-3 pointer">
+      <a class="portfolio-links modal-btn-3 pointer d-block">
         <h3>Front-end store using Vue CLI</h3>
         <p>An e-commerce site with shopping cart for a fake second-hand clothing retailer. Built with the JavaScript
           framework Vue CLI and styled with Bootstrap.</p>
@@ -49,24 +48,22 @@
         <p>This app allows users to make a comparison of rates based on the amount of days a user wishes to stay at a
           selection of fake hotels. Coded in PHP and styled with CSS only, no frameworks used.</p>
       </a>
-      <!-- <a class="portfolio-links" href="">
-        <h3>To-do app in Vue</h3>
-        <p>A CRUD To-do app created with Vue and Bootstrap.</p>
-      </a> -->
       <a class="portfolio-links modal-btn-5 pointer">
         <h3>Portfolio site</h3>
         <p>My resume, created in html and CSS.</p>
       </a>
+   
     </div>
 
   </div>
 
   <!--SERVICES-->
   <div class="container-fluid mx-auto services p-5">
-    <div class="container">
-      <h2 class="text-dark fw-bold mb-5">Services</h2>
-      <div class="row products new m-3"></div>
+    <div class="col-lg-11 mx-auto">
+      <h2 class="fw-bold mb-5">Services</h2>
     </div>
+      <div class="row products new mx-3 col-lg-11 mx-auto"></div>
+   
   </div>
 
   <!--FOOTER-->
