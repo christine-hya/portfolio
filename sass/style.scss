@@ -83,18 +83,6 @@ a {
 }
 
 
-// header{
-//     height: 40%;
-// }
-
-// .navbar-header{
-//     height: 150%;
-// }
-// .navbar-custom {
-//     background-image: none;
-// }
-
-
 /* TITLE */
  #background {
     background-image: url("./images/cover-image-christine.jpg");
@@ -206,22 +194,22 @@ a {
 	color: $error;
 }
 
-.error-message-signup-all {
-	font-size: 0.85rem;
-	color: $error;
-	text-align: center;
-	margin: 1rem 0;
-	display: none;
-}
+// .error-message-signup-all {
+// 	font-size: 0.85rem;
+// 	color: $error;
+// 	text-align: center;
+// 	margin: 1rem 0;
+// 	display: none;
+// }
 
-.error-message-signup {
-	font-size: 0.85rem;
-	color: $error;
-}
+// .error-message-signup {
+// 	font-size: 0.85rem;
+// 	color: $error;
+// }
 
-.signup-success-message {
-    display: none;
-}
+// .signup-success-message {
+//     display: none;
+// }
 
 .breadcrumb {
     background-color: transparent;

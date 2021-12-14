@@ -6,18 +6,18 @@ class Contact {
     }
 
     submitMessage() {
-        let self = this;
+        let self = this
 
         if (this.contactForm) {
             this.contactForm.addEventListener("submit", (e) => {
-                e.preventDefault();
-                let error = 0;
+                e.preventDefault()
+                let error = 0
                 self.contactFields.forEach((field) => {
-                    const input = document.querySelector(`#${field}`);
+                    const input = document.querySelector(`#${field}`)
                     if (self.validateFields(input) == false) {
-                        error++;
+                        error++
                     }
-                });
+                })
 
                 if (error == 0) {
                     const data = {
@@ -26,7 +26,7 @@ class Contact {
                         email: document.querySelector('#contactemail').value,
                         message: document.querySelector('#messagebody').value,
                         
-                    };
+                    }
 
                     fetch('http://localhost/api-for-shop/api/v1/pages/contact', {
                         method: 'POST',
@@ -38,15 +38,16 @@ class Contact {
                         .then((response) => response.json())
                         .then((data) => {
                             if (data.error) {
-                                console.error("Error:", data.message);
+                                console.error("Error:", data.message)
                                 document.querySelector(".error-message-contact-all").
-                                    style.display = "block";
+                                    style.display = "block"
                                 document.querySelector(".error-message-contact-all").
-                                    innerText = "Error";
+                                    innerText = "Error"
 
                             } else {
-                                alert(data.message)
-                                this.contactForm.submit()
+                                let div = document.createElement("div")
+                                this.contactForm.append(div)
+                                div.outerHTML = '<div class="alert alert-warning alert-dismissible fade show" role="alert">' + data.message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
                             }
                         })
                         .catch((data) => {
@@ -63,32 +64,32 @@ class Contact {
         if (field.value.trim() === "") {
             this.setStatus(
                 field,
-                `${field.previousElementSibling.innerText} cannot be blank`,
+                `${field.previousElementSibling.innerText} cannot be blank.`,
                 "error"
-            );
-            return false;
+            )
+            return false
         }
         if (field.type == "text") {
             if (this.isNumber(field.value) == true) {
                 this.setStatus(
                     field,
-                    `${field.previousElementSibling.innerText} cannot be a number`,
+                    `${field.previousElementSibling.innerText} cannot be a number.`,
                     "error"
-                );
-                return false;
+                )
+                return false
             }
         }
 
         else {
-            this.setStatus(field, null, "success");
-            return true;
+            this.setStatus(field, null, "success")
+            return true
         }
     }
 
 
 
 setStatus(field, message, status) {
-    const errorMessage = field.parentElement.querySelector(".error-message-contact");
+    const errorMessage = field.parentElement.querySelector(".error-message-contact")
 
     if (status == "success") {
         if (errorMessage) {
@@ -98,8 +99,8 @@ setStatus(field, message, status) {
     }
 
     if (status == "error") {
-        errorMessage.innerText = message;
-        field.classList.add("is-invalid");
+        errorMessage.innerText = message
+        field.classList.add("is-invalid")
     }
 }
 
@@ -107,8 +108,8 @@ setStatus(field, message, status) {
 
 
 const contactForm = document.querySelector(".contactForm")
-const contactFields = ["name", "surname", "contactemail", "messagebody"];
-const contact = new Contact(contactForm, contactFields);
+const contactFields = ["name", "surname", "contactemail", "messagebody"]
+const contact = new Contact(contactForm, contactFields)
 
 
 

@@ -16,12 +16,13 @@
     <title>Shop Frontend</title>
 </head>
 
-<body class="userAccount auth pink">
+<body class="userAccount auth pink d-flex flex-column min-vh-100">
 
     <div id="nav-placeholder"></div>
 
-    <div class="container-fluid mx-auto pink">
-        <div class="breadcrumb p-4"><a class="text-dark" href="index.html">Home</a><span class="sep">></span>Your Account
+    <div class="container-fluid mx-auto">
+        <div class="breadcrumb p-4"><a class="text-dark" href="index.html">Home</a><span class="sep">></span>Your
+            Account
         </div>
         <br>
 
@@ -34,56 +35,53 @@
                 <form class="updateAccount">
                     <label>User name</label>
                     <input type="text" id="username" name="username" class="form-control rounded-0" readonly>
-                    
+
                     <br>
                     <br>
 
                     <h3>Your account</h3>
                     <div class="row">
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-4">
                             <label for="fname">Name</label>
                             <input type="text" name="fname" id="fnameupdate" class="form-control rounded-0">
-                            <!-- <span class="error-message-update"></span> -->
                         </div>
 
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-4">
                             <label for="lname">Surname</label>
                             <input type="text" name="lname" id="lnameupdate" class="form-control rounded-0">
-                            <!-- <span class="error-message-update"></span> -->
                         </div>
 
                     </div>
 
-                    <br>
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="emailupdate" class="form-control rounded-0">
-                    <span class="error-message-update"></span>
+                    <div class="mb-4">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="emailupdate" class="form-control rounded-0">
+                    </div>
 
-                    <br><br>
+                    <div class="mb-4">
+                        <label for="updatepassword">Update password</label>
+                        <input type="password" class="form-control rounded-0" id="newpassword">
+                        <span class="error-message-update text-danger"></span>
+                    </div>
 
-                    <label for="updatepassword">Update password</label>
-                    <input type="password" class="form-control rounded-0" id="newpassword">
-                    <span class="error-message-update"></span>
+                    <div class="mb-4">
+                        <label for="repeatnewpassword">Repeat new password</label>
+                        <input type="password" class="form-control rounded-0" id="repeatnewpassword">
+                        <span class="error-message-update text-danger"></span>
+                    </div>
 
-                    <br><br>
-
-                    <label for="repeatnewpassword">Repeat new password</label>
-                    <input type="password" class="form-control rounded-0" id="repeatnewpassword">
-                    <span class="error-message-update"></span>
-                    <br>
-                    <br>
                     <div class="text-center">
 
                         <button class="btn btn rounded-0 yellow p-3" type="submit">Update account</button>
-                        <div class="error-message-update-all"></div>
+                        <div class="error-message-update-all text-danger"></div>
                     </div>
                 </form>
 
-                
+
             </div>
-        
+
         </div>
         <br>
         <br>

@@ -8,18 +8,18 @@ class Changepwd {
     }
 
     submitNewpwd() {
-        let self = this;
+        let self = this
 
         if (this.updateForm) {
             this.updateForm.addEventListener("submit", (e) => {
-                e.preventDefault();
-                let error = 0;
+                e.preventDefault()
+                let error = 0
                 self.updateFields.forEach((field) => {
-                    const input = document.querySelector(`#${field}`);
+                    const input = document.querySelector(`#${field}`)
                     if (self.validateFields(input) == false) {
-                        error++;
+                        error++
                     }
-                });
+                })
 
                 if (error == 0) {
                     let user = JSON.parse(localStorage.getItem("user"))
@@ -43,15 +43,15 @@ class Changepwd {
                             if (data.error) {
                                 console.error("Error:", data.message);
                                 document.querySelector(".error-message-update-all").
-                                    style.display = "block";
+                                    style.display = "block"
                                 document.querySelector(".error-message-update-all").
-                                    innerText = "Error";
+                                    innerText = "Error"
 
                             } else {
-                                
-                                this.updateForm.submit()
-                                alert(data.message)
-                                
+                                let div = document.createElement("div")
+                                this.updateForm.append(div)
+                                div.outerHTML = '<div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">' + data.message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+                                                                
                             }
                         })
                         .catch((data) => {
@@ -69,47 +69,47 @@ class Changepwd {
         if (field.value.trim() === "") {
             this.setStatus(
                 field,
-                `${field.previousElementSibling.innerText} cannot be blank`,
+                `${field.previousElementSibling.innerText} cannot be blank.`,
                 "error"
-            );
-            return false;
+            )
+            return false
         }
         if (field.type == "text") {
             if (this.isNumber(field.value) == true) {
                 this.setStatus(
                     field,
-                    `${field.previousElementSibling.innerText} cannot be a number`,
+                    `${field.previousElementSibling.innerText} cannot be a number.`,
                     "error"
-                );
-                return false;
+                )
+                return false
             }
         } else {
             if (this.pwdUpdateRepeat.value !== this.newPwd.value) {
                 this.setStatus(
                     this.pwdUpdateRepeat,
-                    this.pwdUpdateRepeat.previousElementSibling.innerText = 'password repeat must be the same',
+                    this.pwdUpdateRepeat.previousElementSibling.innerText = 'password repeat must be the same.',
                     "error"
-                );
+                )
                 return false
             }
             if (field.type == "password") {
                 if (field.value.length < 8) {
                     this.setStatus(
                         field,
-                        `${field.previousElementSibling.innerText} must be at least 8 characters`,
+                        `${field.previousElementSibling.innerText} must be at least 8 characters.`,
                         "error"
                     );
                     return false
                 }
 
                 else {
-                    this.setStatus(field, null, "success");
+                    this.setStatus(field, null, "success")
                     return true
                 }
 
             } else {
-                this.setStatus(field, null, "success");
-                return true;
+                this.setStatus(field, null, "success")
+                return true
             }
         }
     }
@@ -117,28 +117,28 @@ class Changepwd {
 
 
 setStatus(field, message, status) {
-    const errorMessage = field.parentElement.querySelector(".error-message-update");
+    const errorMessage = field.parentElement.querySelector(".error-message-update")
 
     if (status == "success") {
         if (errorMessage) {
-            errorMessage.innerText = "";
+            errorMessage.innerText = ""
         }
-        field.classList.remove("is-invalid");
+        field.classList.remove("is-invalid")
     }
 
     if (status == "error") {
-        errorMessage.innerText = message;
-        field.classList.add("is-invalid");
+        errorMessage.innerText = message
+        field.classList.add("is-invalid")
     }
 }
 
 }
 
 const updateForm = document.querySelector(".updateAccount")
-const updateFields = ["fnameupdate", "lnameupdate", "emailupdate", "newpassword", "repeatnewpassword"]
+const updateFields = ["newpassword", "repeatnewpassword"]
 const newpassword = document.querySelector('#newpassword')
 const pwdUpdateRepeat = document.querySelector('#repeatnewpassword')
-const updatePwd = new Changepwd(updateForm, updateFields, newpassword, pwdUpdateRepeat);
+const updatePwd = new Changepwd(updateForm, updateFields, newpassword, pwdUpdateRepeat)
 
 
 

@@ -58,14 +58,7 @@ const cartInfo = function () {
     let cart = new Cart()
 
     if (localStorage.getItem("user") != null) {
-        // cart.findUserCart()
         cart.displayCart()
-        //     let user = JSON.parse(localStorage.user)
-        //     cart.getCart(user.id)
-        //     setTimeout(() => {
-        //         let cartItems = JSON.parse(localStorage.getItem('cart'))
-        //         cart.getCartDisplay(cartItems)
-        //     },1000)
     }
 }
 
@@ -116,7 +109,6 @@ const userInfo = function () {
         });
     }
 }
-
 
 //function to load js scripts
 function loadScript(url, callback) {

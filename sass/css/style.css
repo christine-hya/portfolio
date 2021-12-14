@@ -159,20 +159,6 @@ a {
   font-size: 0.85rem;
   color: red; }
 
-.error-message-signup-all {
-  font-size: 0.85rem;
-  color: red;
-  text-align: center;
-  margin: 1rem 0;
-  display: none; }
-
-.error-message-signup {
-  font-size: 0.85rem;
-  color: red; }
-
-.signup-success-message {
-  display: none; }
-
 .breadcrumb {
   background-color: transparent;
   padding: 0; }

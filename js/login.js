@@ -37,7 +37,7 @@ class Login {
                             document.querySelector(".error-message-all").
                                 style.display = "block";
                             document.querySelector(".error-message-all").
-                                innerText = "Your password or username is incorrect, please try again";
+                                innerText = "Your password or username is incorrect, please try again.";
                         } else {
                             localStorage.setItem("user", JSON.stringify(data));
                             localStorage.setItem("auth", 1);
@@ -55,7 +55,7 @@ class Login {
         if (field.value.trim() === "") {
             this.setStatus(
                 field,
-                `${field.previousElementSibling.innerText} cannot be blank`,
+                `${field.previousElementSibling.innerText} cannot be blank.`,
                 "error"
             );
             return false;
@@ -64,7 +64,7 @@ class Login {
                 if (field.value.length < 8) {
                     this.setStatus(
                         field,
-                        `${field.previousElementSibling.innerText} must be at least 8 characters`,
+                        `${field.previousElementSibling.innerText} must be at least 8 characters.`,
                         "error"
                     );
                     return false;
@@ -101,6 +101,5 @@ const form = document.querySelector(".loginForm");
 if (form) {
     const fields = ["username", "password"];
     const validator = new Login(form, fields)
-    console.log(validator.fields)
 }
 

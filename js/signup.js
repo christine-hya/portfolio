@@ -12,12 +12,12 @@ class Signup {
 
         if (this.signupForm) {
             this.signupForm.addEventListener("submit", (e) => {
-                e.preventDefault();
-                let error = 0;
+                e.preventDefault()
+                let error = 0
                 self.fields.forEach((field) => {
                     const input = document.querySelector(`#${field}`);
                     if (self.validateFields(input) == false) {
-                        error++;
+                        error++
                     }
                 });
 
@@ -28,7 +28,7 @@ class Signup {
                         lname: document.querySelector('#lname').value,
                         email: document.querySelector('#email').value,
                         password: document.querySelector('#password').value,
-                    };
+                    }
 
                     fetch('http://localhost/api-for-shop/api/v1/pages/signup', {
                         method: 'POST',
@@ -42,19 +42,20 @@ class Signup {
                             if (data.error) {
                                 console.error("Error:", data.message);
                                 document.querySelector(".error-message-signup-all").
-                                    style.display = "block";
+                                    style.display = "block"
                                 document.querySelector(".error-message-signup-all").
-                                    innerText = "Error";
+                                    innerText = "Error"
 
                             } else {
-                                console.log(data.message)
                                 if (data.message == 'User already exists.') {
                                     document.querySelector('.error-message-signup-all').innerHTML = data.message
-                                    e.preventDefault();
-                                    // this.signupForm.style.display = 'none'
-                                    // alert('You have successfully signed up. Use your details to log in.')
+                                    e.preventDefault()
                                 } else {
-                                    this.signupForm.submit()
+                                    // this.signupForm.submit()
+                                    let div = document.createElement("div")
+                                    this.signupForm.append(div)
+                                    div.outerHTML = '<div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">You have successfully signed up. Use your details to <a class="text-dark" href="login.html">log in</a>.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+                                    console.log(data.message)
                                 }
                             }
                         })
@@ -72,7 +73,7 @@ class Signup {
         if (field.value.trim() === "") {
             this.setStatus(
                 field,
-                `${field.previousElementSibling.innerText} cannot be blank`,
+                `${field.previousElementSibling.innerText} cannot be blank.`,
                 "error"
             )
             return false;
@@ -81,16 +82,16 @@ class Signup {
             if (this.isNumber(field.value) == true) {
                 this.setStatus(
                     field,
-                    `${field.previousElementSibling.innerText} cannot be a number`,
+                    `${field.previousElementSibling.innerText} cannot be a number.`,
                     "error"
                 )
-                return false;
+                return false
             }
         } else {
             if (this.pwdRepeat.value !== this.password.value) {
                 this.setStatus(
                     this.pwdRepeat,
-                    this.pwdRepeat.previousElementSibling.innerText = 'password repeat must be the same',
+                    this.pwdRepeat.previousElementSibling.innerText = 'password repeat must be the same.',
                     "error"
                 )
                 return false
@@ -99,9 +100,9 @@ class Signup {
                 if (field.value.length < 8) {
                     this.setStatus(
                         field,
-                        `${field.previousElementSibling.innerText} must be at least 8 characters`,
+                        `${field.previousElementSibling.innerText} must be at least 8 characters.`,
                         "error"
-                    );
+                    )
                     return false
                 }
 
@@ -118,18 +119,18 @@ class Signup {
     }
 
     setStatus(field, message, status) {
-        const errorMessage = field.parentElement.querySelector(".error-message-signup");
+        const errorMessage = field.parentElement.querySelector(".error-message-signup")
 
         if (status == "success") {
             if (errorMessage) {
-                errorMessage.innerText = "";
+                errorMessage.innerText = ""
             }
-            field.classList.remove("is-invalid");
+            field.classList.remove("is-invalid")
         }
 
         if (status == "error") {
-            errorMessage.innerText = message;
-            field.classList.add("is-invalid");
+            errorMessage.innerText = message
+            field.classList.add("is-invalid")
         }
     }
 
@@ -140,8 +141,8 @@ const signupForm = document.querySelector(".signupForm")
 const pwdRepeat = document.querySelector('#repeatPassword')
 const password = document.querySelector('#password')
 
-const fields = ["username", "fname", "lname", "email", "password", "repeatPassword"];
-const signup = new Signup(signupForm, fields, pwdRepeat, password);
+const fields = ["username", "fname", "lname", "email", "password", "repeatPassword"]
+const signup = new Signup(signupForm, fields, pwdRepeat, password)
 
 const signupFormContainer = document.querySelector("#sign-up-form")
 
