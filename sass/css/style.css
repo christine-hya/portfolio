@@ -235,4 +235,76 @@ a {
 .map {
   width: 80%; }
 
+@media screen and (max-width: 750px) {
+  .title-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -155%);
+    padding: 3%; }
+
+  h1 {
+    font-size: 1.9rem; }
+
+  h2 {
+    font-size: 1.65rem; }
+
+  .arrow {
+    display: none; }
+
+  .navbar-toggler {
+    position: fixed;
+    left: 75%; }
+
+  .close-btn {
+    position: relative;
+    left: 170%; }
+
+  .modal-container {
+    padding: 10px;
+    margin: 10px; } }
+@media screen and (max-width: 320px) {
+  .title-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+  h1 {
+    font-size: 1.7rem; }
+
+  h2 {
+    font-size: 1.45rem; }
+
+  .arrow {
+    display: none; }
+
+  .sgl-product-container {
+    margin: 0%;
+    padding: 0%; }
+
+  .single-product {
+    max-width: 100vw;
+    width: 100vw;
+    padding: 0; }
+
+  .img-thumbnail {
+    display: none; }
+
+  .navbar-toggler {
+    position: fixed;
+    left: 70%; }
+
+  .close-btn {
+    position: relative;
+    left: 120%; }
+
+  .modal-container {
+    padding: 10px;
+    margin: 10px; } }
+@media screen and (max-width: 1280px) {
+  .title-container {
+    top: 78%; } }
+@media screen and (max-width: 1025px) {
+  .title-container {
+    top: 58%; } }
+
 /*# sourceMappingURL=style.css.map */

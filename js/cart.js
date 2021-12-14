@@ -40,14 +40,14 @@ class Cart {
                             + cart.cartId + "' class='btn btn-light'>x</a></td>";
                         temp += "<td><a class='text-dark' href='product.html?product="
                             + cart.slug + "'>"
-                            + cart.title + "</a><br><br><small>R" + Math.round(cart.price) + "</small></td>";
+                            + cart.title + "</a><br><small>R" + Math.round(cart.price) + "</small></td>";
 
-                        temp += "<td><img class='img-thumbnail' src='" + cart.image + "' style='max-width:70px;''> </td>";
-                        temp += "<td class='text-end'>1</td></tr>";
+                        temp += "<td><img class='img-thumbnail' src='" + cart.image + "' style='max-width:70px;''> </td></tr>";
+                        // temp += "<td class='text-end'>1</td></tr>";
 
 
                         let total = document.getElementById('totalPrice')
-                        if (total) { total.innerHTML = data['count'] * cart.price }
+                        if (total) { total.innerHTML = "R" + data['count'] * cart.price }
                         let cartCountDisplay = document.querySelector('.cartCount')
                         if (cartCountDisplay) { cartCountDisplay.innerHTML = data['count'] }
                     })
