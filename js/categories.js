@@ -17,7 +17,7 @@ class Categories {
                             //start loop
                             data['response'].forEach((category) => {
 
-                                temp += '<li class="text-center"><a class="dropwdown-item text-light" href="/category.html?category='
+                                temp += '<li class="text-center"><a class="dropwdown-item text-light links" href="/category.html?category='
                                     + encodeURIComponent(category.categories)
                                     + '">' +
                                     toTitleCase(category.categories) +

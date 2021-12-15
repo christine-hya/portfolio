@@ -42,9 +42,9 @@ class Products {
                         data['response'].forEach((product) => {
                             document.querySelector('.product_image').innerHTML = '<img src="' + product.image + '" class="img-fluid">'
                             document.querySelector('.product_title').innerHTML = product.title
-                            document.querySelector('.product_price').innerHTML = 'R' + Math.round(product.price)
+                            document.querySelector('.product_price').innerHTML = 'From R' + Math.round(product.price)
                             document.querySelector('.product_description').innerHTML = '<p>' + product.description + '</p>'
-                            document.querySelector('.breadcrumb').innerHTML = '<a href="index.html">Home</a><span class="sep">></span><a href="/category.html?category='
+                            document.querySelector('.breadcrumb').innerHTML = '<a class="yellow-links" href="index.html">Home</a><span class="sep">></span><a class="yellow-links" href="/category.html?category='
                                 + product.categories + '">' + toTitleCase(product.categories) + '</a><span class="sep">></span>' + product.title
                         })
                         //close the for loop                      

@@ -34,6 +34,11 @@ h1 {
 h2 {
   font-size: 2rem; }
 
+.product-links :hover,
+.product-links :active,
+.product-links :visited {
+  color: #212529 !important; }
+
 a {
   text-decoration: none !important;
   color: #212529 !important; }
@@ -46,14 +51,21 @@ a {
 .text-end a {
   float: right; }
 
-.product-links {
-  text-decoration: none !important;
-  color: #212529 !important; }
-  .product-links :hover,
-  .product-links :active,
-  .product-links :visited {
-    text-decoration: none !important;
-    color: #212529 !important; }
+.pointer {
+  cursor: pointer; }
+
+button:hover {
+  transform: scale(102%);
+  background-color: #CC59D2; }
+
+.grow:hover {
+  transform: scale(102%); }
+
+.links:hover {
+  background-color: #CC59D2; }
+
+.yellow-links:hover {
+  background-color: #FDE12D; }
 
 .footer-height {
   height: 100px;
@@ -69,7 +81,7 @@ a {
   background-attachment: fixed;
   max-width: 100vw;
   width: 100%;
-  height: 600px;
+  height: 700px;
   position: relative;
   margin-bottom: 0;
   margin-top: 0; }
@@ -77,35 +89,31 @@ a {
 .title-container {
   position: absolute;
   left: 15%;
-  top: 68%; }
-
-.tagline {
-  font-size: xx-large;
-  font-weight: bold; }
+  top: 73%; }
 
 .arrow-down {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  color: white; }
+  position: absolute;
+  left: 45%;
+  top: 10%; }
 
 @keyframes arrowAnimation {
   0% {
-    transform: translateY(0); }
+    color: #212529; }
+  25% {
+    color: #CC59D2; }
   50% {
-    transform: translateY(-5px); }
+    color: #CC59D2; }
+  75% {
+    color: #CC59D2; }
   100% {
-    transform: translateY(0); } }
-.bounce {
+    color: #212529; } }
+.change-colour {
+  color: #212529;
   animation-name: arrowAnimation;
-  animation-duration: 1s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
-  animation-direction: reverse; }
-
-.arrow {
-  font-weight: bold;
-  font-size: xx-large; }
+  animation-direction: normal; }
 
 /* MAIN SECTION */
 .services {
@@ -145,9 +153,6 @@ a {
   padding: 30px;
   left: 90%; }
 
-.pointer {
-  cursor: pointer; }
-
 .error-message-all {
   font-size: 0.85rem;
   color: red;
@@ -164,6 +169,28 @@ a {
   padding: 0; }
   .breadcrumb .sep {
     padding: 0 5px; }
+
+.back-to-top-container {
+  position: fixed;
+  z-index: 99;
+  height: 100px;
+  bottom: 150px;
+  right: 10px; }
+
+.back-to-top-button {
+  display: none;
+  position: sticky;
+  z-index: 99;
+  text-align: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 5px;
+  box-shadow: h-offset v-offset blur color;
+  box-shadow: 0 0 5px black; }
 
 .product {
   border: 0.5px solid #adb5bd;
@@ -226,8 +253,8 @@ a {
   max-width: 100%;
   margin: 0 auto; }
 
-.signupMsg {
-  height: 200px; }
+.img-thumbnail {
+  max-width: 70px; }
 
 .profile-pic {
   max-width: 90%; }
@@ -239,8 +266,7 @@ a {
   .title-container {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -155%);
-    padding: 3%; }
+    transform: translate(-50%, -155%); }
 
   h1 {
     font-size: 1.9rem; }
@@ -261,13 +287,11 @@ a {
 
   .modal-container {
     padding: 10px;
-    margin: 10px; } }
-@media screen and (max-width: 320px) {
-  .title-container {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
+    margin: 10px; }
 
+  .title {
+    text-align: center; } }
+@media screen and (max-width: 320px) {
   h1 {
     font-size: 1.7rem; }
 
@@ -299,10 +323,25 @@ a {
 
   .modal-container {
     padding: 10px;
-    margin: 10px; } }
+    margin: 10px; }
+
+  .services {
+    padding: 0; } }
 @media screen and (max-width: 1280px) {
   .title-container {
-    top: 78%; } }
+    top: 78%; }
+
+  .back-to-top-container {
+    bottom: 100px;
+    right: 0px; }
+
+  .back-to-top-button {
+    width: 80px;
+    height: 80px;
+    font: x-small; }
+
+  .links:hover {
+    background-color: unset; } }
 @media screen and (max-width: 1025px) {
   .title-container {
     top: 58%; } }

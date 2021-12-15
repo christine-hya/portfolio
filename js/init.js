@@ -23,9 +23,9 @@ $.get('/templates/navigation.html', function (data) {
     $('#nav-placeholder').replaceWith(data)
 
     if (localStorage.getItem('user') == null) {
-        document.querySelector('.accountNav').innerHTML = '<li class="nav-item"><a class="nav-link active text-light" aria-current="page" href="login.html">Log in</a></li><li class="nav-item"><a class="nav-link active pointer text-light" aria-current="page" href="signupform.html">Sign up</a></li>'
+        document.querySelector('.accountNav').innerHTML = '<li class="nav-item"><a class="nav-link active text-light links" aria-current="page" href="login.html">Log in</a></li><li class="nav-item"><a class="nav-link active pointer text-light" aria-current="page" href="signupform.html">Sign up</a></li>'
     } else {
-        document.querySelector('.accountNav').innerHTML = '<li class="nav-item"><a class="nav-link active logout text-light" aria-current="page" href="#">Log out</a></li><li class="nav-item"><a class="nav-link active text-light" aria-current="page" href="account.html">Account</a></li>'
+        document.querySelector('.accountNav').innerHTML = '<li class="nav-item"><a class="nav-link active logout text-light links" aria-current="page" href="#">Log out</a></li><li class="nav-item"><a class="nav-link active text-light links" aria-current="page" href="account.html">Account</a></li>'
     }
 })
 
@@ -107,6 +107,18 @@ const userInfo = function () {
         logoutLink.addEventListener("click", (e) => {
             auth.logOut()
         });
+    }
+}
+
+//scroll-to-top button
+mybutton = document.getElementById("topButton");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+    mybutton.style.display = "block";
+    } else {
+    mybutton.style.display = "none";
     }
 }
 

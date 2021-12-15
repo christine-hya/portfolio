@@ -18,9 +18,9 @@ class Cart {
             .then((response) => response.json())
             .then((data) => {
                 var temp = ""
-                
+
                 if (data['response'] == undefined) {
-                  
+
                     const cart = document.querySelector('.cart')
                     if (cart) {
                         document.querySelector('.cart').style.display = 'none'
@@ -36,14 +36,12 @@ class Cart {
                     data['response'].forEach((cart) => {
 
                         temp += "<tr>";
-                        temp += "<td><a class='text-dark' href='cart.html?item="
+                        temp += "<td><a href='cart.html?item="
                             + cart.cartId + "' class='btn btn-light'>x</a></td>";
-                        temp += "<td><a class='text-dark' href='product.html?product="
+                        temp += "<td><a class='links' href='product.html?product="
                             + cart.slug + "'>"
                             + cart.title + "</a><br><small>R" + Math.round(cart.price) + "</small></td>";
-
-                        temp += "<td><img class='img-thumbnail' src='" + cart.image + "' style='max-width:70px;''> </td></tr>";
-                        // temp += "<td class='text-end'>1</td></tr>";
+                        temp += "<td><img class='img-thumbnail' src='" + cart.image + "' '> </td></tr>";
 
 
                         let total = document.getElementById('totalPrice')
@@ -58,14 +56,12 @@ class Cart {
 
                     localStorage.setItem('cart', JSON.stringify(data['response']))
                 }
-
             })
 
             .catch((error) => {
                 console.error('Error:', error)
             })
     }
-
 }
 
 
