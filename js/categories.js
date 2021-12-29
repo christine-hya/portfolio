@@ -1,12 +1,12 @@
 class Categories {
     constructor() {
-        this.apiUrl = "http://christine-hogg.42web.io/api/v1/pages/"
+        this.apiUrl = "http://christine-hogg.42web.io/api/v1/pages"
     }
 
     //display categories in nav
 
     getAllCategories() {
-        fetch(this.apiUrl + "/categories.php").then(
+        fetch(this.apiUrl + "/categories").then(
             res => {
                 res.json().then(
                     data => {
@@ -37,7 +37,7 @@ class Categories {
 
     getSingleCategory(slug) {
 
-        fetch(this.apiUrl + '/' + slug + '.php').then(
+        fetch(this.apiUrl + '/' + slug).then(
             res => {
                 res.json().then(
                     data => {
