@@ -112,7 +112,9 @@ const userInfo = function () {
 
 //scroll-to-top button
 mybutton = document.getElementById("topButton");
+if(mybutton){
 window.onscroll = function() {scrollFunction()};
+}
 
 function scrollFunction() {
     if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
