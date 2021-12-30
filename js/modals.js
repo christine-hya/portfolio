@@ -43,7 +43,6 @@ modalBtn3.addEventListener('click', function() {
 });
 }
 
-
 if(modalBtn3){
 modalBtn4.addEventListener('click', function() {
     modal4.classList.add('open-modal');
@@ -61,27 +60,35 @@ modalBtn5.addEventListener('click', function() {
 }
 
 //CLOSE BUTTONS
+if(closeBtn1){
 closeBtn1.addEventListener('click', function() {
     modal1.classList.remove('open-modal');
     document.body.style.overflow = 'auto';
 });
+}
 
 // closeBtn2.addEventListener('click', function() {
 //     modal2.classList.remove('open-modal');
 //     document.body.style.overflow = 'auto';
 // });
 
+if(closeBtn3){
 closeBtn3.addEventListener('click', function() {
     modal3.classList.remove('open-modal');
     document.body.style.overflow = 'auto';
 });
+}
 
+if(closeBtn4){
 closeBtn4.addEventListener('click', function() {
     modal4.classList.remove('open-modal');
     document.body.style.overflow = 'auto';
 });
+}
 
+if(closeBtn5){
 closeBtn5.addEventListener('click', function() {
     modal5.classList.remove('open-modal');
     document.body.style.overflow = 'auto';
 });
+}

@@ -4,111 +4,101 @@ $(function () {
     if (localStorage.getItem('user') == null && $('.auth').length) {
         window.location.href = "/login.html"
     }
-    loadScript('js/categories.js', categoriesSetup)
-    loadScript('js/products.js', productsSetup)
-    loadScript('js/addtocart.js', addtoCart)
-    loadScript('js/auth.js', userInfo)
-    loadScript('js/signup.js')
-    loadScript('js/login.js')
     loadScript('js/contact.js')
-    loadScript('js/cart.js', cartInfo)
-    loadScript('js/delete.js', deletefromCart)
-    loadScript('js/changepwd.js')
-    loadScript('js/orders.js')
     loadScript('js/modals.js')
 });
 
 //display header 
-$.get('/templates/navigation.html', function (data) {
-    $('#nav-placeholder').replaceWith(data)
+// $.get('/templates/navigation.html', function (data) {
+//     $('#nav-placeholder').replaceWith(data)
 
-    if (localStorage.getItem('user') == null) {
-        document.querySelector('.accountNav').innerHTML = '<li class="nav-item"><a class="nav-link active text-light links" aria-current="page" href="login.html">Log in</a></li><li class="nav-item"><a class="nav-link active pointer text-light" aria-current="page" href="signupform.html">Sign up</a></li>'
-    } else {
-        document.querySelector('.accountNav').innerHTML = '<li class="nav-item"><a class="nav-link active logout text-light links" aria-current="page" href="#">Log out</a></li><li class="nav-item"><a class="nav-link active text-light links" aria-current="page" href="account.html">Account</a></li>'
-    }
-})
+//     if (localStorage.getItem('user') == null) {
+//         document.querySelector('.accountNav').innerHTML = '<li class="nav-item"><a class="nav-link active text-light links" aria-current="page" href="login.html">Log in</a></li><li class="nav-item"><a class="nav-link active pointer text-light" aria-current="page" href="signupform.html">Sign up</a></li>'
+//     } else {
+//         document.querySelector('.accountNav').innerHTML = '<li class="nav-item"><a class="nav-link active logout text-light links" aria-current="page" href="#">Log out</a></li><li class="nav-item"><a class="nav-link active text-light links" aria-current="page" href="account.html">Account</a></li>'
+//     }
+// })
 
 //display footer
-$.get('/templates/footer.html', function (data) {
-    $('#footer-placeholder').replaceWith(data)
-})
+// $.get('/templates/footer.html', function (data) {
+//     $('#footer-placeholder').replaceWith(data)
+// })
 
 //get categories from api
-const categoriesSetup = function () {
-    let categories = new Categories()
-    categories.getAllCategories()
-    if (urlParam('category')) {
-        categories.getSingleCategory(decodeURIComponent(urlParam('category')))
-    }
-}
+// const categoriesSetup = function () {
+//     let categories = new Categories()
+//     categories.getAllCategories()
+//     if (urlParam('category')) {
+//         categories.getSingleCategory(decodeURIComponent(urlParam('category')))
+//     }
+// }
 
 //get products from api
-const productsSetup = function () {
-    let products = new Products()
-    if ($('.products.new').length) {
-        products.getNewProducts(8)
-    }
-    if (urlParam('product')) {
-        products.getSingleProduct(urlParam('product'))
-    }
-}
+// const productsSetup = function () {
+//     let products = new Products()
+//     if ($('.products.new').length) {
+//         products.getNewProducts(8)
+//     }
+//     if (urlParam('product')) {
+//         products.getSingleProduct(urlParam('product'))
+//     }
+// }
 
-const cartInfo = function () {
-    let cart = new Cart()
+// const cartInfo = function () {
+//     let cart = new Cart()
 
-    if (localStorage.getItem("user") != null) {
-        cart.displayCart()
-    }
-}
+//     if (localStorage.getItem("user") != null) {
+//         cart.displayCart()
+//     }
+// }
 
 //add to cart
-const addtoCart = function () {
-    let addtoCartButton = document.querySelector('#addtoCart')
-    let loginMsg = document.querySelector('.login-cart')
-    if (addtoCartButton) {
+// const addtoCart = function () {
+//     let addtoCartButton = document.querySelector('#addtoCart')
+//     let loginMsg = document.querySelector('.login-cart')
+//     if (addtoCartButton) {
 
-        //when user is not logged in    
-        if (localStorage.getItem("user") == null) {
-            addtoCartButton.style.display = "none"
-            loginMsg.style.display = "block"
-        }
-        //when user is logged in
-        else {
-            addtoCartButton.style.display = "block"
-            loginMsg.style.display = "none"
+//         //when user is not logged in    
+//         if (localStorage.getItem("user") == null) {
+//             addtoCartButton.style.display = "none"
+//             loginMsg.style.display = "block"
+//         }
+//         //when user is logged in
+//         else {
+//             addtoCartButton.style.display = "block"
+//             loginMsg.style.display = "none"
 
-            addtoCartButton.addEventListener("click", (e) => {
+//             addtoCartButton.addEventListener("click", (e) => {
 
-                let cartItem = new Cartitem
-                if (urlParam('product')) {
-                    cartItem.addItem(urlParam('product'))
-                }
-            });
-        }
+//                 let cartItem = new Cartitem
+//                 if (urlParam('product')) {
+//                     cartItem.addItem(urlParam('product'))
+//                 }
+//             });
+//         }
 
-    }
-}
+//     }
+// }
 
 //delete item from cart
-const deletefromCart = function () {
-    if (urlParam('item')) {
-        let deleteItem = new Deleteitem
-        deleteItem.deleteItem(urlParam('item'))
-    }
-}
+// const deletefromCart = function () {
+//     if (urlParam('item')) {
+//         let deleteItem = new Deleteitem
+//         deleteItem.deleteItem(urlParam('item'))
+//     }
+// }
 
-//log in
-const userInfo = function () {
-    const auth = new Auth()
-    let logoutLink = document.querySelector(".logout")
+// //log in
+// const userInfo = function () {
+//     const auth = new Auth()
+//     let logoutLink = document.querySelector(".logout")
 
-    if (logoutLink) {
-        logoutLink.addEventListener("click", (e) => {
-            auth.logOut()
-        });
-    }
-}
+//     if (logoutLink) {
+//         logoutLink.addEventListener("click", (e) => {
+//             auth.logOut()
+//         });
+//     }
+// }
 
 //scroll-to-top button
 mybutton = document.getElementById("topButton");
