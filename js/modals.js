@@ -6,6 +6,7 @@ const modalBtn4 = document.querySelector('.modal-btn-4');
 const modalBtn5 = document.querySelector('.modal-btn-5');
 const modalBtn6 = document.querySelector('.modal-btn-6');
 const modalBtn7 = document.querySelector('.modal-btn-7');
+const modalBtn8 = document.querySelector('.modal-btn-8');
 
 //MODAL SELECTORS
 const modal1 = document.getElementById('modal-1');
@@ -15,6 +16,7 @@ const modal4 = document.getElementById('modal-4');
 const modal5 = document.getElementById('modal-5');
 const modal6 = document.getElementById('modal-6');
 const modal7 = document.getElementById('modal-7');
+const modal8 = document.getElementById('modal-8');
 
 //CLOSE BUTTON SELECTORS
 const closeBtn1 = document.querySelector('.close-btn-1');
@@ -24,6 +26,7 @@ const closeBtn4 = document.querySelector('.close-btn-4');
 const closeBtn5 = document.querySelector('.close-btn-5');
 const closeBtn6 = document.querySelector('.close-btn-6');
 const closeBtn7 = document.querySelector('.close-btn-7');
+const closeBtn8 = document.querySelector('.close-btn-8');
 
 //OPEN MODALS
 if (modalBtn1) {
@@ -78,6 +81,14 @@ if (modalBtn7) {
     });
 }
 
+if (modalBtn8) {
+    modalBtn8.addEventListener('click', function () {
+        modal8.classList.add('open-modal');
+        document.body.style.overflow = 'hidden';
+        modal8.style.overflow = 'auto';
+    });
+}
+
 //CLOSE BUTTONS
 if (closeBtn1) {
     closeBtn1.addEventListener('click', function () {
@@ -122,6 +133,13 @@ if (closeBtn6) {
 if (closeBtn7) {
     closeBtn7.addEventListener('click', function () {
         modal7.classList.remove('open-modal');
+        document.body.style.overflow = 'auto';
+    });
+}
+
+if (closeBtn8) {
+    closeBtn8.addEventListener('click', function () {
+        modal8.classList.remove('open-modal');
         document.body.style.overflow = 'auto';
     });
 }
