@@ -266,6 +266,10 @@ position: absolute;
 .map {
   width: 80%; }
 
+.divider {
+  border-top: 2px solid #000000;
+}
+
 @media screen and (max-width: 750px) {
   .title-container {
     top: 50%;
