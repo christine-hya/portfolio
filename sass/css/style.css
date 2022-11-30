@@ -289,15 +289,6 @@ position: absolute;
   .arrow {
     display: none; }
 
-  .sgl-product-container {
-    margin: 0%;
-    padding: 0%; }
-
-  .single-product {
-    max-width: 100vw;
-    width: 100vw;
-    padding: 0; }
-
   .img-thumbnail {
     display: none; }
 
@@ -312,7 +303,8 @@ position: absolute;
   .modal-container {
     padding: 10px;
     margin: 10px; }
- }
+  }
+
 
 @media screen and (max-width: 750px) {
   .title-container {
