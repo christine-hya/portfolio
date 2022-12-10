@@ -197,7 +197,7 @@ position: absolute;
   box-shadow: 0 0 5px black; }
 
 .product {
-  border: 0.5px solid #adb5bd;
+  /* border: 0.5px solid #adb5bd; */
   height: 300px;
   margin-bottom: 1rem;
   text-align: center;
@@ -233,7 +233,7 @@ position: absolute;
       left: 50%;
       transform: translate(-50%, -50%); }
   .product .info:hover {
-    opacity: 70%; }
+    opacity: 85%; }
 
 .blue {
   background-color: #B5DCEB; }
