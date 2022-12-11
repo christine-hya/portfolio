@@ -325,7 +325,13 @@ position: absolute;
     margin: 10px; }
 
   .title {
-    text-align: center; } }
+    text-align: center; }
+  
+  .image-centre {
+    text-align: center;
+  }  
+
+  }
 
 @media screen and (max-width: 992px) {
   #background {
