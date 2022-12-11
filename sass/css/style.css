@@ -33,6 +33,9 @@ h1 {
 
 h2 {
   font-size: 2rem; } */
+.keeptogether {
+    white-space: nowrap ;
+  }  
 
 .product-links :hover,
 .product-links :active,
