@@ -61,8 +61,8 @@ a {
   transform: scale(102%);
   background-color: #CC59D2; } */
 
-.grow:hover {
-  transform: scale(102%); }
+/* .grow:hover {
+  transform: scale(105%); } */
 
 .links:hover {
   background-color: #CC59D2; }
@@ -271,6 +271,11 @@ position: absolute;
 
 .divider {
   border-top: 0px solid #000000;
+}
+
+.rounded-circle {
+  position: sticky;
+  top: 6rem;
 }
 
 @media screen and (max-width: 320px) {
