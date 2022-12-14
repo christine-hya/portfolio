@@ -93,6 +93,10 @@ a {
     font-size: 300%;
   }
 
+ .mediumfont {
+    font-size: 200%;
+  }
+
 .title-container {
 position: absolute;
  left: 10%;
@@ -160,6 +164,11 @@ position: absolute;
   padding: 30px;
   left: 90%; }
 
+.hide {
+  visibility: hidden;
+  display: none;
+  }
+
 .error-message-all {
   font-size: 0.85rem;
   color: red;
@@ -181,10 +190,10 @@ position: absolute;
   position: fixed;
   z-index: 99;
   height: 100px;
-  bottom: 150px;
-  right: 10px; }
+  bottom: 55px;
+  right: 5px; }
 
-.back-to-top-button {
+/* .back-to-top-button {
   display: none;
   position: sticky;
   z-index: 99;
@@ -197,7 +206,7 @@ position: absolute;
   color: white;
   padding: 5px;
   box-shadow: h-offset v-offset blur color;
-  box-shadow: 0 0 5px black; }
+  box-shadow: 0 0 5px black; } */
 
 .product {
   /* border: 0.5px solid #adb5bd; */

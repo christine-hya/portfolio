@@ -101,6 +101,9 @@ $(function () {
 // }
 
 //scroll-to-top button
+
+// const modal2 = document.getElementById('modal-2');
+
 mybutton = document.getElementById("topButton");
 if(mybutton){
 window.onscroll = function() {scrollFunction()};
@@ -109,7 +112,8 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
     mybutton.style.display = "block";
-    } else {
+    } 
+    else {
     mybutton.style.display = "none";
     }
 }

@@ -28,6 +28,9 @@ const closeBtn5 = document.querySelector('.close-btn-5');
 // const closeBtn7 = document.querySelector('.close-btn-7');
 // const closeBtn8 = document.querySelector('.close-btn-8');
 
+//HIDE BACK-TO-TOP BUTTON
+// const backtotopBtn = document.getElementById('topButton');
+
 //OPEN MODALS
 if (modalBtn1) {
     modalBtn1.addEventListener('click', function () {
@@ -42,6 +45,7 @@ modalBtn2.addEventListener('click', function() {
     document.body.style.overflow = 'hidden';
     modal2.style.overflow = 'auto';
 });
+
 
 if (modalBtn3) {
     modalBtn3.addEventListener('click', function () {
