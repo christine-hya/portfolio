@@ -49,7 +49,7 @@ a {
   a :active,
   a :visited {
     text-decoration: none !important;
-    color: #CC59D2 !important; }
+   }
 
 .text-end a {
   float: right; }
@@ -164,11 +164,6 @@ position: absolute;
   padding: 30px;
   left: 90%; }
 
-.hide {
-  visibility: hidden;
-  display: none;
-  }
-
 .error-message-all {
   font-size: 0.85rem;
   color: red;
@@ -279,7 +274,7 @@ position: absolute;
   width: 80%; }
 
 .divider {
-  border-top: 0px solid #000000;
+  border-top: 0px solid #212529;
 }
 
 .rounded-circle {
@@ -298,9 +293,6 @@ position: absolute;
   h2 {
     font-size: 1.45rem; }
 
-  /* .arrow {
-    display: none; } */
-
   .img-thumbnail {
     display: none; }
 
@@ -315,6 +307,19 @@ position: absolute;
   .modal-container {
     padding: 10px;
     margin: 10px; }
+  }
+
+  #personaCarousel {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+  .carousel-control-left {
+    margin-left: -100px;
+  }
+  
+  .carousel-control-right {
+    margin-right: -100px;
   }
 
 
@@ -346,7 +351,16 @@ position: absolute;
   
   .image-centre {
     text-align: center;
-  }  
+  } 
+  /* .title-container {
+    font-size: small;
+    padding-top: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+    position: static;
+    text-align: center;
+   }  */
+
 
   }
 
@@ -359,7 +373,7 @@ position: absolute;
   }
   .title-container {
     font-size: small;
-    padding-top: 90%;
+    padding-top: 250px;
     padding-left: 5%;
     padding-right: 5%;
     position: static;
@@ -383,5 +397,10 @@ position: absolute;
     font: x-small; }
 
   .links:hover {
-    background-color: unset; } }
+    background-color: unset; }
+  
+    .hide {
+      visibility: hidden;
+      }
+  }
 
