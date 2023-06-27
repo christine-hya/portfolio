@@ -286,6 +286,10 @@ position: absolute;
   top: 6rem;
 }
 
+.dropshadow {
+  box-shadow: 0px 10px 40px 0 rgba(0, 0, 0, 0.1);
+}
+
 @media screen and (max-width: 320px) {
   .title-container {
     font-size: xx-small;
