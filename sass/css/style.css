@@ -5,12 +5,11 @@ body {
   padding: 0%;
   margin: 0%;
   margin-top: 0%;
-  /* font-family: 'Mulish', sans-serif; */
-  font-family: 'Yantramanav', sans-serif;
+  font-family: 'Mulish', 'Fira Sans', 'Arial', sans-serif;
  }
 
-.nav-font {
-  font-family: 'Fira Sans', sans-serif;
+figcaption, .nav-font {
+  font-family: 'Space Mono', monospace,'Fira Sans', sans-serif;
   font-size: 16px;
 } 
 
@@ -28,15 +27,28 @@ html {
   line-height: 1.6;
   scroll-behavior: smooth; }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1, h2, h3, h4, h5 {
   line-height: 1.2;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Maven Pro', 'Fira Sans', 'Arial', sans-serif;
+  font-weight: 500;
 }
 
+h5 {
+  line-height: 1.2;
+  font-family: 'Maven Pro', 'Fira Sans', 'Arial', sans-serif;
+  font-weight: 300;
+}
+
+blockquote {
+  line-height: 1.5;
+}
+
+small {
+  font-family: 'Space Mono', monospace, 'Fira Sans', 'Arial', sans-serif;
+}
+.carousel-item {
+  height: 400px;
+}
 .keeptogether {
     white-space: nowrap ;
   }  
@@ -234,7 +246,7 @@ position: absolute;
     left: 0;
     padding: 1rem;
     min-height: 100%;
-    color: #212529 !important;
+    color: black !important;
     opacity: 0;
     transition: all .25 ease;
     width: 100%; }
@@ -244,7 +256,7 @@ position: absolute;
       left: 50%;
       transform: translate(-50%, -50%); }
   .product .info:hover {
-    opacity: 85%; }
+    opacity: 95%; }
 
 .blue {
   background-color: #B5DCEB; }
