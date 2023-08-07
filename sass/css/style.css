@@ -306,7 +306,9 @@ a {
 .carousel-control-right {
   margin-right: -100px;
 }
-
+.responsive-video {
+width: 75%;
+}
 @media screen and (max-width: 320px) {
   .title-container {
     font-size: xx-small;
@@ -336,6 +338,10 @@ a {
   .text-mobile-centre {
       text-align: center;
     }
+    .responsive-video {
+      width: 500px !important;
+      color: green;
+     } 
   }
 
 
@@ -378,15 +384,9 @@ a {
   .text-mobile-centre {
     text-align: center;
   }
-  /* .title-container {
-    font-size: small;
-    padding-top: 20%;
-    padding-left: 5%;
-    padding-right: 5%;
-    position: static;
-    text-align: center;
-   }  */
-
+  .responsive-video {
+   width: 100% !important;
+  }
 
   }
 
