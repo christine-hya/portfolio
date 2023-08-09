@@ -294,6 +294,8 @@ a {
   background-color:#857587;
 }
 
+/* Carousel */
+
 #personaCarousel {
   margin-left: 50px;
   margin-right: 50px;
@@ -305,6 +307,15 @@ a {
 
 .carousel-control-right {
   margin-right: -100px;
+}
+
+#personaCarousel .carousel-item img {
+  object-fit: contain !important;
+  object-position: center;
+  height: 100%;
+}
+.carousel-item {
+  height: auto;
 }
 .responsive-video {
 width: 75%;
@@ -386,6 +397,12 @@ width: 75%;
   }
   .responsive-video {
    width: 100% !important;
+  }
+  .carousel-control-left {
+    margin-left: -50px;
+  }
+  .carousel-control-right {
+    margin-right: -50px;
   }
 
   }
