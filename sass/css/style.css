@@ -314,12 +314,24 @@ a {
   object-position: center;
   height: 100%;
 }
-.carousel-item {
+#personaCarousel .carousel-item {
   height: auto;
 }
-.responsive-video {
-width: 75%;
+
+#treeCarousel .carousel-item img {
+  object-fit: contain !important;
+  object-position: center;
+  height: 100%;
 }
+
+#treeCarousel .carousel-item {
+  height: auto;
+}
+
+.responsive-video {
+  width: 75%;
+}
+
 @media screen and (max-width: 320px) {
   .title-container {
     font-size: xx-small;
